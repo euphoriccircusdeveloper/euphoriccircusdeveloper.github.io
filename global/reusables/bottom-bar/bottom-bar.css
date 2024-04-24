@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "OpenDyslexic-Bold";
+  src: url("/Users/lindonholmes/Documents/random/NienkesCircus/proj/alpineScss/out/global/assets/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-BoldItalic";
+  src: url("/Users/lindonholmes/Documents/random/NienkesCircus/proj/alpineScss/out/global/assets/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-Italic";
+  src: url("/Users/lindonholmes/Documents/random/NienkesCircus/proj/alpineScss/out/global/assets/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-Regular";
+  src: url("../../../global/assets/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0px;
+  font-family: "OpenDyslexic-Regular", sans-serif;
+}
+
+h1 {
+  color: #493DAF;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+.ux-grid, .bottom-bar-main-content-bottom, .partner-logos-wrapper, .bottom-bar-main-content-top, .bottom-bar-main-content, .bottom-bar-content-wrapper, .ux-grid-specific {
+  display: grid;
+  height: 100%;
+}
+
+.ux-grid-specific {
+  grid-template-columns: auto;
+  grid-template-rows: 0.25fr 0.5fr 0.25fr;
+}
+
+.ux-centre-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ux-red {
+  background-color: red;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.align-centre {
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+}
+
+.align-middle-right {
+  display: flex;
+  justify-content: flex-end; /* Align contents to the right */
+  align-items: center; /* Vertical center */
+}
+
+.page-contents-wrapper {
+  margin: 40px;
+}
+
+.bottom-bar {
+  height: 210px;
+  border-top: 1px solid black;
+}
+
+.bottom-bar-content-wrapper {
+  grid-template-columns: auto;
+  grid-template-rows: 0.9fr 0.1fr;
+  margin: 10px 20px 0px 20px;
+}
+
+.bottom-bar-main-content {
+  grid-template-columns: auto;
+  grid-template-rows: 0.7fr 0.3fr;
+  border-bottom: 1px solid black;
+}
+
+.bottom-bar-main-content-top {
+  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-rows: auto;
+}
+
+.page-links-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-link {
+  background-color: none;
+  border: 1px solid black;
+  margin: 5px 20px 0px 0px;
+  height: 40px;
+  border-radius: 13px;
+  padding: 0px 20px 0px 20px;
+}
+
+.page-link-arrow {
+  display: inline;
+  height: 12px;
+}
+
+.partner-logos-wrapper {
+  grid-template-columns: 0.2fr 0.8fr;
+  grid-template-rows: auto;
+}
+
+.bottom-bar-main-content-bottom {
+  grid-template-columns: 0.075fr 0.075fr 0.075fr 0.075fr 0.7fr;
+  grid-template-rows: auto;
+}
+
+.rights-declaration {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.75rem;
+}
+
+.social-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px 10px 10px;
+}
+
+.social-logo {
+  width: auto;
+  max-width: 100%;
+  height: 80%;
+}
+
+.partner-img-wrapper {
+  margin: 0px 10px 0px 10px;
+}
+
+.partner-img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=bottom-bar.css.map */

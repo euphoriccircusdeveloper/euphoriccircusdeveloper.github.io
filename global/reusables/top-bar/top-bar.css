@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "OpenDyslexic-Bold";
+  src: url("/Users/lindonholmes/Documents/random/NienkesCircus/proj/alpineScss/out/global/assets/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-BoldItalic";
+  src: url("/Users/lindonholmes/Documents/random/NienkesCircus/proj/alpineScss/out/global/assets/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-Italic";
+  src: url("/Users/lindonholmes/Documents/random/NienkesCircus/proj/alpineScss/out/global/assets/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-Regular";
+  src: url("../../../global/assets/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0px;
+  font-family: "OpenDyslexic-Regular", sans-serif;
+}
+
+h1 {
+  color: #493DAF;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+.ux-grid, .top-bar-contents, .ux-grid-specific {
+  display: grid;
+  height: 100%;
+}
+
+.ux-grid-specific {
+  grid-template-columns: auto;
+  grid-template-rows: 0.25fr 0.5fr 0.25fr;
+}
+
+.ux-centre-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ux-red {
+  background-color: red;
+}
+
+.circle, .euphoric-logo {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.align-centre, .header-page-link-big, .header-page-link {
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+}
+
+.align-middle-right {
+  display: flex;
+  justify-content: flex-end; /* Align contents to the right */
+  align-items: center; /* Vertical center */
+}
+
+.page-contents-wrapper {
+  margin: 40px;
+}
+
+.top-bar {
+  background-color: #493DAF;
+  border-radius: 0px 0px 0px 50px; /* Adjust the value to control the roundness */
+}
+
+.top-bar-contents {
+  width: 90%;
+  grid-template-columns: 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr;
+  grid-template-rows: auto;
+  color: #ffffff;
+  height: 100px;
+  background-color: #493DAF;
+  border-radius: 0px 0px 0px 50px; /* Adjust the value to control the roundness */
+}
+@media screen and (max-width: 960px) {
+  .top-bar-contents {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .top-bar-contents {
+    grid-template-columns: 0.25fr 0.25fr 0.5fr;
+  }
+}
+
+.ux-page-contents {
+  margin: 30px;
+}
+
+.euphoric-logo {
+  max-width: 70px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 860px) {
+  .euphoric-logo {
+    max-width: 60px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .euphoric-logo {
+    max-width: 55px;
+  }
+}
+
+.burger-menu {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .burger-menu {
+    width: 100%;
+    max-width: 70px;
+    display: inline;
+    padding: 0px 30px 0px 0px;
+  }
+}
+
+.header-page-link {
+  font-size: 1.25rem;
+  font-family: "OpenDyslexic-Bold", sans-serif;
+  text-align: center;
+}
+@media screen and (max-width: 1100px) {
+  .header-page-link {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 865px) {
+  .header-page-link {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header-page-link {
+    display: none;
+  }
+}
+
+.header-page-link-big {
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 860px) {
+  .header-page-link-big {
+    font-size: 1.25rem;
+  }
+}
+
+.side-bar {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  background-color: #493DAF;
+  height: 350px;
+  width: 70px;
+  border-radius: 0px 0px 0px 50px; /* topleft, topright, bottomright, bottomleft (I think lol)*/
+  z-index: 1;
+}
+@media screen and (max-width: 720px) {
+  .side-bar {
+    display: inline;
+    width: 33.3333333333px;
+    height: 150px;
+  }
+}
+
+.float-rounded-corner {
+  position: absolute;
+  right: 70px;
+  top: 100px;
+  height: 350px;
+  width: 100px;
+  border-radius: 0px 0px 0px 50px;
+  z-index: 1;
+}
+@media screen and (max-width: 720px) {
+  .float-rounded-corner {
+    right: 33.3333333333px;
+  }
+}
+
+/*# sourceMappingURL=top-bar.css.map */
