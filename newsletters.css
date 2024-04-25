@@ -1,18 +1,18 @@
 @font-face {
   font-family: "OpenDyslexic-Bold";
-  src: url("../../global/assets/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+  src: url("global/assets/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-BoldItalic";
-  src: url("../../global/assets/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+  src: url("global/assets/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Italic";
-  src: url("../../global/assets/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+  src: url("global/assets/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Regular";
-  src: url("../../global/assets/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+  src: url("global/assets/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
 }
 html {
   font-size: 16px;
@@ -84,4 +84,4 @@ button:hover {
   margin: 40px;
 }
 
-/*# sourceMappingURL=about-us.css.map */
+/*# sourceMappingURL=newsletters.css.map */
