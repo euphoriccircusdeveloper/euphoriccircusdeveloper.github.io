@@ -44,6 +44,19 @@
 					</div>
 				</div>
 
+
+				<div x-data="{ query: new URLSearchParams(location.search).get('q') }">
+						<h3>Read Query Parameter Demo</h3>
+
+						<p class="mb-2"> location.search: "<span x-text="location.search"></span>" </p>
+						<p> Param "q" (from URL): "<span x-text="query"></span>" </p>
+						<p>Some sample links with "q" in the URL:
+						<a href="?q=my search">my search</a>,
+						<a href="?q=another search">another search</a>,
+						<a href="?q=">reset</a>
+						</p>
+				</div>
+
 				<!--
 					<div x-data="fetchVariablesAndFetchInitFunction()" x-init="init()">
 					<template x-if="loading">
