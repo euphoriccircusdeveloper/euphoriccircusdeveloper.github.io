@@ -39,16 +39,19 @@ function splitIntoLines(fileContents) {
  * 	--> allows for the variables defined in this function to be accessible to the alpine-js functions.
  * 	--> allows for the function init(), defined in this function, to be accessible to the alpine-js functions.
 **/
-function fetchVariablesAndFetchInitFunction() {
+function fetchVars{
 	console.log("FETCHING VARIABLES AND FETCHING INIT FUNCTION")
 	return {
 		loading: true, // Initially set to true
-		lines: [],
+		lines: ["hi"],
 
-		async init() {
+		async initing() {
+			console.log("INITING!")
 			try {
 				const filePath = 'text.txt'; // Adjust the file path
+				console.log("waiting for load file contents...")
 				const fileContents = await loadFileContents(filePath);
+				console.log("got file contents!")
 				this.lines = splitIntoLines(fileContents);
 				this.loading = false; // Set loading to false once data is loaded
 			} catch (error) {
@@ -58,3 +61,25 @@ function fetchVariablesAndFetchInitFunction() {
 		},
 	};
 }
+
+document.addEventListener('alpine:init', () => {
+	Alpine.data('fetchVariablesAndFetchInitFunction', () => ({
+		loading: false,
+		lines: ["bye"],
+
+		async init() {
+			console.log("INITING!")
+			try {
+				const filePath = 'text.txt'; // Adjust the file path
+				console.log("waiting for load file contents...")
+				const fileContents = await loadFileContents(filePath);
+				console.log("got file contents!")
+				this.lines = splitIntoLines(fileContents);
+				this.loading = false; // Set loading to false once data is loaded
+			} catch (error) {
+				console.error('Error loading file:', error);
+				// Handle any errors
+			}
+		},
+	}))
+})

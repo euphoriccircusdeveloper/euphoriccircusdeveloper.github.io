@@ -31,21 +31,31 @@
 				<div> This is the text that lies underneath the heading! Here we will paste lots of really cool text that people can read if they are interested! </div>
 
 
+				<div x-data="fetchVariablesAndFetchInitFunction">
+					<div x-show="loading">
+						Loading... 
+					</div>
+					<div x-show="!loading">
+						Not loading 
 
-				<div x-data="fetchVariablesAndFetchInitFunction()" x-init="init()">
-					<template x-if="loading">
-						Loading... <!-- Display a loading message -->
-					</template>
-					<template x-else-if="lines.length === 0">
-						No lines available <!-- Display a message when lines array is empty -->
-					</template>
-					<template x-else>
 						<template x-for="line in lines" :key="line">
 							<div x-text="line"></div>
 						</template>
-					</template>
+					</div>
 				</div>
 
+				<!--
+					<div x-data="fetchVariablesAndFetchInitFunction()" x-init="init()">
+					<template x-if="loading">
+					Loading... 
+					</template>
+					<template x-else-if="lines.length === 0">
+					No lines available
+					</template>
+					<template x-else>
+					</template>
+					</div>
+				-->
 
 
 
