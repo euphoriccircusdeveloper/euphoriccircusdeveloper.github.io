@@ -36,9 +36,9 @@
 						Loading... 
 					</div>
 					<div x-show="!loading">
-						Not loading 
+						Finished loading
 
-						<template x-for="line in lines" :key="line">
+						<template x-for="line in lines">
 							<div x-text="line"></div>
 						</template>
 					</div>

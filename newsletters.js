@@ -64,7 +64,7 @@ function fetchVars(){
 
 document.addEventListener('alpine:init', () => {
 	Alpine.data('fetchVariablesAndFetchInitFunction', () => ({
-		loading: false,
+		loading: true,
 		lines: ["bye"],
 
 		async init() {
