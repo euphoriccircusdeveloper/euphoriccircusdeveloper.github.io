@@ -40,6 +40,7 @@ function splitIntoLines(fileContents) {
  * 	--> allows for the function init(), defined in this function, to be accessible to the alpine-js functions.
 **/
 function fetchVariablesAndFetchInitFunction() {
+	console.log("FETCHING VARIABLES AND FETCHING INIT FUNCTION")
 	return {
 		loading: true, // Initially set to true
 		lines: [],
