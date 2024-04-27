@@ -38,7 +38,7 @@ export async function setDynamicElementsContent(){
 			elementContent = await window[corrContentFuncName]();
 			console.log(`Here is the result: ${elementContent}`)
 		} else{
-			console.error(`(1) Function "${functionName}" does not exist.`);
+			console.error(`(1) Function "${corrContentFuncName}" does not exist.`);
 
 			if (typeof myFunction === 'function') {
 				// Call the function
@@ -46,7 +46,7 @@ export async function setDynamicElementsContent(){
 				elementContent = await window[corrContentFuncName]();
 				console.log(`Here is the proof: ${elementContent}`)
 			} else {
-				console.error(`(2) Function "${functionName}" does not exist.`);
+				console.error(`(2) Function "${corrContentFuncName}" does not exist.`);
 			}
 
 			console.log("TESTING END --------------------------------------------")
