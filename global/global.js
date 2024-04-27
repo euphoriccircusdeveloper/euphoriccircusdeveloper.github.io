@@ -28,6 +28,37 @@ export async function setDynamicElementsContent(){
 		const corrContentFuncName = corrContentFuncNameStart + corrContentFuncNameEnd
 
 		//--ENSURE FUNCTION EXISTS--
+
+
+		/////////////////////////////////////////////////testing
+		console.log("TESTING--------------------------------------------")
+		const myFunction = window[corrContentFuncName]; // Access the function by name
+		if (myFunction){
+			console.log("THERE IS A MY FUNCTION")
+			elementContent = await window[corrContentFuncName]();
+			console.log(`Here is the result: ${elementContent}`
+		} else{
+			console.error(`(1) Function "${functionName}" does not exist.`);
+
+		if (typeof myFunction === 'function') {
+			// Call the function
+			console.log("THE FUNCTION EXISTS!!!")
+			elementContent = await window[corrContentFuncName]();
+			console.log(`Here is the proof: ${elementContent}`
+		} else {
+			console.error(`(2) Function "${functionName}" does not exist.`);
+		}
+
+		console.log("TESTING END --------------------------------------------")
+
+
+		/////////////////////////////////////////////////j
+
+
+
+
+
+
 		if (!window[corrContentFuncName] || typeof window[corrContentFuncName] !== 'function') {
 			//get the list of functions 
 			const propNames = Object.getOwnPropertyNames(window);
