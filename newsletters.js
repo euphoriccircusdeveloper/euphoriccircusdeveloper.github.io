@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", setDynamicElementsContent);
 
 //--content getters--
 
-async function contentGetter_text_lines() {
+export async function contentGetter_text_lines() {
 	return "<h1> This surrrreeellllyyyy is the dynamic content </h1>"
 }
 
 
-async function contentGetter_loaded_txt() {
+export async function contentGetter_loaded_txt() {
 	try{
 		fileContents = loadFileContents()
 	} catch (error) {

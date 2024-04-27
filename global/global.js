@@ -95,6 +95,7 @@ export async function setDynamicElementsContent(){
 	}
 }
 
+function OOhDearYouAppearToBeInTheScopeOfGlobalDotJS(){}
 
 //export all functions
 //window.setDynamicElementsContent = setDynamicElementsContent;
