@@ -1,4 +1,12 @@
 
+function listFunctionsInError() {
+
+  console.error("Available functions: " + functionList);
+}
+
+// Call the function to list all available functions
+listFunctionsInError();
+
 export async function setDynamicElementsContent(){
 	var prefix = "D-"
 	var corrContentFuncNameStart = "contentGetter_"
@@ -28,7 +36,13 @@ export async function setDynamicElementsContent(){
 
 		//--ENSURE FUNCTION EXISTS--
 		if (!window[corrContentFuncName] || typeof window[corrContentFuncName] !== 'function') {
-			console.error(`There is no function with the name ${corrContentFuncName}. It was expected that this function exists, since you have an element with the id: ${id}, which is seen to be representing a dynamic element due to starting with the prefix ${prefix}`);
+			//get the list of functions 
+			  const propNames = Object.getOwnPropertyNames(global || window);
+			  const functionNames = propNames.filter(prop => typeof global[prop] === 'function');
+			  const functionList = functionNames.join('\n, ');
+
+
+			console.error(`There is no function with the name ${corrContentFuncName}. It was expected that this function exists, since you have an element with the id: ${id}, which is seen to be representing a dynamic element due to starting with the prefix ${prefix}. \n Available functions: ${functionList}`);
 			element.innerHTML = "No content available";
 			continue;
 		}
