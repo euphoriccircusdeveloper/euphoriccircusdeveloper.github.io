@@ -30,8 +30,8 @@ export async function setDynamicElementsContent(){
 		//--ENSURE FUNCTION EXISTS--
 		if (!window[corrContentFuncName] || typeof window[corrContentFuncName] !== 'function') {
 			//get the list of functions 
-			const propNames = Object.getOwnPropertyNames(global || window);
-			const functionNames = propNames.filter(prop => typeof global[prop] === 'function');
+			const propNames = Object.getOwnPropertyNames(window);
+		  const functionNames = propNames.filter(prop => typeof window[prop] === 'function');
 			const functionList = functionNames.join('\n, ');
 
 
