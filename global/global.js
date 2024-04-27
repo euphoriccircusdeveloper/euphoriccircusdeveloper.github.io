@@ -1,11 +1,4 @@
 
-function listFunctionsInError() {
-
-  console.error("Available functions: " + functionList);
-}
-
-// Call the function to list all available functions
-listFunctionsInError();
 
 export async function setDynamicElementsContent(){
 	var prefix = "D-"
@@ -21,7 +14,7 @@ export async function setDynamicElementsContent(){
 		var element = dynamicElements[i];
 
 		//--GET ITS ID--
-        const id = element.id;
+		const id = element.id;
 
 		console.log("Setting the inner html to loading...")
 		//--SET THAT ELEMENT AS LOADING--
@@ -30,16 +23,16 @@ export async function setDynamicElementsContent(){
 		//--LOAD EXPECTED FUNCTION NAME--
 
 		//the end of the corresponding content function name 
-        const corrContentFuncNameEnd = id.replace(new RegExp('^' + prefix), '').replace(/-/g, '_'); // Remove the prefix from the start and replace dashes with underscores
+		const corrContentFuncNameEnd = id.replace(new RegExp('^' + prefix), '').replace(/-/g, '_'); // Remove the prefix from the start and replace dashes with underscores
 		//corresponding content function name
 		const corrContentFuncName = corrContentFuncNameStart + corrContentFuncNameEnd
 
 		//--ENSURE FUNCTION EXISTS--
 		if (!window[corrContentFuncName] || typeof window[corrContentFuncName] !== 'function') {
 			//get the list of functions 
-			  const propNames = Object.getOwnPropertyNames(global || window);
-			  const functionNames = propNames.filter(prop => typeof global[prop] === 'function');
-			  const functionList = functionNames.join('\n, ');
+			const propNames = Object.getOwnPropertyNames(global || window);
+			const functionNames = propNames.filter(prop => typeof global[prop] === 'function');
+			const functionList = functionNames.join('\n, ');
 
 
 			console.error(`There is no function with the name ${corrContentFuncName}. It was expected that this function exists, since you have an element with the id: ${id}, which is seen to be representing a dynamic element due to starting with the prefix ${prefix}. \n Available functions: ${functionList}`);
@@ -67,7 +60,7 @@ export async function setDynamicElementsContent(){
 
 		//--SET THE ELEMENTS NEW CONTENT--
 		element.innerHTML = elementContent;
-    }
+	}
 }
 
 
