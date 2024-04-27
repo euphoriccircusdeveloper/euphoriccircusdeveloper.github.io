@@ -44,7 +44,7 @@ export async function setDynamicElementsContent(){
 			// Call the function
 			console.log("THE FUNCTION EXISTS!!!")
 			elementContent = await window[corrContentFuncName]();
-			console.log(`Here is the proof: ${elementContent}`
+			console.log(`Here is the proof: ${elementContent}`)
 		} else {
 			console.error(`(2) Function "${functionName}" does not exist.`);
 		}
