@@ -1,5 +1,31 @@
+import { setDynamicElementsContent } from 'global/global.js';
+
+document.addEventListener("DOMContentLoaded", setDynamicElementsContent);
+
+//--content getters--
+
+async function contentGetter_text_lines() {
+	return "<h1> This surrrreeellllyyyy is the dynamic content </h1>"
+}
 
 
+async function contentGetter_loaded_txt() {
+	try{
+		fileContents = loadFileContents()
+	} catch (error) {
+		throw error;
+	}
+	return `${fileContents}`
+}
+
+//////////////////////////
+//GROTE FUNCTIONS
+//////////////////////////
+
+
+//////////////////////////
+//KLEINE FUNCTIONS
+//////////////////////////
 
 /**
  * Load the contents of a text file asynchronously.
@@ -11,6 +37,7 @@ async function loadFileContents(filePath) {
 		const response = await fetch(filePath);
 		if (!response.ok) {
 			throw new Error(`Error fetching file: ${response.status} ${response.statusText}`);
+			return null
 		}
 		const fileContents = await response.text();
 		return fileContents;
@@ -28,58 +55,3 @@ async function loadFileContents(filePath) {
 function splitIntoLines(fileContents) {
 	return fileContents.split('\n');
 }
-
-///////////////////////
-// SPECIAL FUNCTIONS 
-//////////////////////
-
-/**
- * This is basically returning alpine.js code
- * When placed inside of an alpine.js x-data, this function:
- * 	--> allows for the variables defined in this function to be accessible to the alpine-js functions.
- * 	--> allows for the function init(), defined in this function, to be accessible to the alpine-js functions.
-**/
-function fetchVars(){
-	console.log("FETCHING VARIABLES AND FETCHING INIT FUNCTION")
-	return {
-		loading: true, // Initially set to true
-		lines: ["hi"],
-
-		async initing() {
-			console.log("INITING!")
-			try {
-				const filePath = 'text.txt'; // Adjust the file path
-				console.log("waiting for load file contents...")
-				const fileContents = await loadFileContents(filePath);
-				console.log("got file contents!")
-				this.lines = splitIntoLines(fileContents);
-				this.loading = false; // Set loading to false once data is loaded
-			} catch (error) {
-				console.error('Error loading file:', error);
-				// Handle any errors
-			}
-		},
-	};
-}
-
-document.addEventListener('alpine:init', () => {
-	Alpine.data('fetchVariablesAndFetchInitFunction', () => ({
-		loading: true,
-		lines: ["bye"],
-
-		async init() {
-			console.log("INITING!")
-			try {
-				const filePath = 'text.txt'; // Adjust the file path
-				console.log("waiting for load file contents...")
-				const fileContents = await loadFileContents(filePath);
-				console.log("got file contents!")
-				this.lines = splitIntoLines(fileContents);
-				this.loading = false; // Set loading to false once data is loaded
-			} catch (error) {
-				console.error('Error loading file:', error);
-				// Handle any errors
-			}
-		},
-	}))
-})

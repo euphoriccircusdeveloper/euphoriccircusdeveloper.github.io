@@ -84,6 +84,27 @@ button:hover {
   margin: 40px;
 }
 
+.page-header {
+  background: #493DAF;
+  color: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  padding: 30px 20px 30px 20px;
+  font-size: 1.5rem;
+}
+
+.page-intro {
+  margin: 20px 0px 0px 0px;
+}
+
+.section-intro {
+  margin: 20px 0px 0px 0px;
+  padding: 0px 20px 0px 20px;
+}
+
+.vert-spacing-m {
+  padding: 20px 0px 20px 0px;
+}
+
 .bottom-bar {
   height: 210px;
   border-top: 1px solid black;

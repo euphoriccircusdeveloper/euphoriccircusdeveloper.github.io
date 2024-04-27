@@ -2,7 +2,7 @@
 	<head>
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
 		<link rel=stylesheet href="newsletters.css">
-		<script src="newsletters.js"></script>
+		<script type="module" src="newsletters.js"></script>
 	<link rel=stylesheet href="global/reusables/top-bar/top-bar.css">
 <script src="global/reusables/top-bar/top-bar.js"></script>
 <link rel=stylesheet href="global/reusables/bottom-bar/bottom-bar.css">
@@ -30,47 +30,10 @@
 				<h1> Newsletters </h1>
 				<div> This is the text that lies underneath the heading! Here we will paste lots of really cool text that people can read if they are interested! </div>
 
+				<div id="D-text-lines"> </div>
 
-				<div x-data="fetchVariablesAndFetchInitFunction">
-					<div x-show="loading">
-						Loading... 
-					</div>
-					<div x-show="!loading">
-						Finished loading
-
-						<template x-for="line in lines">
-							<div x-text="line"></div>
-						</template>
-					</div>
-				</div>
-
-
-				<div x-data="{ query: new URLSearchParams(location.search).get('q') }">
-						<h3>Read Query Parameter Demo</h3>
-
-						<p class="mb-2"> location.search: "<span x-text="location.search"></span>" </p>
-						<p> Param "q" (from URL): "<span x-text="query"></span>" </p>
-						<p>Some sample links with "q" in the URL:
-						<a href="?q=my search">my search</a>,
-						<a href="?q=another search">another search</a>,
-						<a href="?q=">reset</a>
-						</p>
-				</div>
-
-				<!--
-					<div x-data="fetchVariablesAndFetchInitFunction()" x-init="init()">
-					<template x-if="loading">
-					Loading... 
-					</template>
-					<template x-else-if="lines.length === 0">
-					No lines available
-					</template>
-					<template x-else>
-					</template>
-					</div>
-				-->
-
-
+				And the loaded text is: 
+				<div id="D-loaded-txt"> </div>
 
 			</div>
 

@@ -84,6 +84,27 @@ button:hover {
   margin: 40px;
 }
 
+.page-header {
+  background: #493DAF;
+  color: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  padding: 30px 20px 30px 20px;
+  font-size: 1.5rem;
+}
+
+.page-intro {
+  margin: 20px 0px 0px 0px;
+}
+
+.section-intro {
+  margin: 20px 0px 0px 0px;
+  padding: 0px 20px 0px 20px;
+}
+
+.vert-spacing-m {
+  padding: 20px 0px 20px 0px;
+}
+
 .index-intro-grid {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
@@ -102,21 +123,43 @@ button:hover {
   height: 100vh;
 }
 
-.page-header {
-  background: #493DAF;
-  color: #ffffff;
-  border-radius: 15px 15px 15px 15px;
-  padding: 30px 20px 30px 20px;
-  font-size: 1.5rem;
+.mobile-menu-overlay {
+  position: absolute;
+  top: calc(100px + 25px);
+  left: 20px;
+  height: 100vh; /* 100% of the viewport height */
+  width: calc(100vw - 20px - 53.3333333333px);
+  background-color: rgba(73, 61, 175, 0.25); /* Color with opacity */
+  border-radius: 30px;
+  z-index: 0; /* Make sure it's above other content */
+  backdrop-filter: blur(10px); /* Apply blur effect */
 }
 
-.page-intro {
-  margin: 20px 0px 0px 0px;
+.mobile-menu-decor-left {
+  position: absolute;
+  left: 30px;
+  top: calc(100px + 25px + lateral-decor-add-offse);
+  height: auto;
+  width: auto;
+  z-index: 1;
 }
 
-.section-intro {
-  margin: 20px 0px 0px 0px;
-  padding: 0px 20px 0px 20px;
+.mobile-menu-decor-top {
+  position: absolute;
+  left: 30%;
+  top: 100px;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+}
+
+.mobile-menu-decor-right {
+  position: absolute;
+  right: 32px;
+  top: calc(100px + 25px + lateral-decor-add-offse);
+  height: 100%;
+  width: auto;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=index.css.map */
