@@ -1,4 +1,4 @@
-import { setDynamicElementsContent } from 'global/global.js';
+import { setDynamicElementsContent } from './global/global.js';
 
 document.addEventListener("DOMContentLoaded", setDynamicElementsContent);
 
