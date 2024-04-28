@@ -51,7 +51,7 @@ button:hover {
   grid-template-rows: 0.25fr 0.5fr 0.25fr;
 }
 
-.ux-centre-wrapper {
+.centre-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
