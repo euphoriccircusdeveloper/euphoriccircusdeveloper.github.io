@@ -41,7 +41,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .index-intro-grid, .ux-grid-specific {
+.ux-grid, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -105,22 +105,4 @@ button:hover {
   padding: 20px 0px 20px 0px;
 }
 
-.index-intro-grid {
-  grid-template-columns: 0.5fr 0.5fr;
-  grid-template-rows: auto;
-}
-
-.jumping-boy-img {
-  position: absolute;
-  right: 0px;
-  top: 100px;
-  width: 50vw;
-  height: auto;
-  z-index: 0;
-}
-
-.juggle-pins-decor {
-  height: 100vh;
-}
-
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=meet-the-team.css.map */

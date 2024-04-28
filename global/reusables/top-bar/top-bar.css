@@ -191,7 +191,11 @@ button:hover {
   }
 }
 
-.side-bar {
+.vertical_transition, .mobile-dropdown-menu-button, .mobile-dropdown-menu-button-8, .mobile-dropdown-menu-button-7, .mobile-dropdown-menu-button-6, .mobile-dropdown-menu-button-5, .mobile-dropdown-menu-button-4, .mobile-dropdown-menu-button-3, .mobile-dropdown-menu-button-2, .mobile-dropdown-menu-button-1, .mobile-menu-decor-right, .mobile-menu-decor-top, .mobile-menu-decor-left, .mobile-menu-overlay, .side-bar-open {
+  transition: height 0.6s ease;
+}
+
+.side-bar, .side-bar-open {
   position: absolute;
   right: 0;
   top: 100px;
@@ -202,11 +206,15 @@ button:hover {
   z-index: 1;
 }
 @media screen and (max-width: 720px) {
-  .side-bar {
+  .side-bar, .side-bar-open {
     display: inline;
     width: 33.3333333333px;
     height: 150px;
   }
+}
+
+.side-bar-open {
+  height: 100vh;
 }
 
 .float-rounded-corner {
@@ -222,6 +230,122 @@ button:hover {
   .float-rounded-corner {
     right: 33.3333333333px;
   }
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .mobile-menu-overlay {
+    display: block;
+    position: absolute;
+    top: calc(100px + 25px);
+    left: 20px;
+    height: 100vh; /* 100% of the viewport height */
+    width: calc(100vw - 20px - 53.3333333333px);
+    background-color: rgba(73, 61, 175, 0.25); /* Color with opacity */
+    border-radius: 30px;
+    z-index: 1;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    transition: height 0.6s ease;
+  }
+}
+
+.mobile-menu-decor-left {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .mobile-menu-decor-left {
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: calc(100px + 25px + 5px);
+    height: auto;
+    width: auto;
+    z-index: 2;
+  }
+}
+
+.mobile-menu-decor-top {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .mobile-menu-decor-top {
+    display: block;
+    position: absolute;
+    left: 30%;
+    top: 100px;
+    height: auto;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.mobile-menu-decor-right {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .mobile-menu-decor-right {
+    display: block;
+    position: absolute;
+    right: 32px;
+    top: calc(100px + 25px + 5px);
+    height: 100%;
+    width: auto;
+    z-index: 2;
+  }
+}
+
+.mobile-dropdown-menu-button, .mobile-dropdown-menu-button-8, .mobile-dropdown-menu-button-7, .mobile-dropdown-menu-button-6, .mobile-dropdown-menu-button-5, .mobile-dropdown-menu-button-4, .mobile-dropdown-menu-button-3, .mobile-dropdown-menu-button-2, .mobile-dropdown-menu-button-1 {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .mobile-dropdown-menu-button, .mobile-dropdown-menu-button-8, .mobile-dropdown-menu-button-7, .mobile-dropdown-menu-button-6, .mobile-dropdown-menu-button-5, .mobile-dropdown-menu-button-4, .mobile-dropdown-menu-button-3, .mobile-dropdown-menu-button-2, .mobile-dropdown-menu-button-1 {
+    display: block;
+    position: absolute;
+    background-color: #493DAF;
+    border: 1px solid black;
+    height: 60px;
+    width: calc(calc(100vw - 20px - 53.3333333333px) * 0.7);
+    border-radius: 13px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    left: calc(20px + calc(100vw - 20px - 53.3333333333px) / 2 - calc(calc(100vw - 20px - 53.3333333333px) * 0.7) / 2);
+    z-index: 2;
+  }
+}
+
+.mobile-dropdown-menu-button-1 {
+  top: calc(100px + 25px + 30px + 0 * 80px);
+}
+
+.mobile-dropdown-menu-button-2 {
+  top: calc(100px + 25px + 30px + 1 * 80px);
+}
+
+.mobile-dropdown-menu-button-3 {
+  top: calc(100px + 25px + 30px + 2 * 80px);
+}
+
+.mobile-dropdown-menu-button-4 {
+  top: calc(100px + 25px + 30px + 3 * 80px);
+}
+
+.mobile-dropdown-menu-button-5 {
+  top: calc(100px + 25px + 30px + 4 * 80px);
+}
+
+.mobile-dropdown-menu-button-6 {
+  top: calc(100px + 25px + 30px + 5 * 80px);
+}
+
+.mobile-dropdown-menu-button-7 {
+  top: calc(100px + 25px + 30px + 6 * 80px);
+}
+
+.mobile-dropdown-menu-button-8 {
+  top: calc(100px + 25px + 30px + 7 * 80px);
 }
 
 /*# sourceMappingURL=top-bar.css.map */

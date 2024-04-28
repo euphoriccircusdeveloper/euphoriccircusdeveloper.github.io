@@ -41,7 +41,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .ux-grid-specific {
+.ux-grid, .roles-wrapper, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -103,6 +103,16 @@ button:hover {
 
 .vert-spacing-m {
   padding: 20px 0px 20px 0px;
+}
+
+.roles-wrapper {
+  width: 100%;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: auto;
+  height: 700px;
+}
+.roles-wrapper-right-offset {
+  padding: 50px;
 }
 
 /*# sourceMappingURL=get-involved.css.map */

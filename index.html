@@ -8,29 +8,44 @@
 <script src="global/reusables/bottom-bar/bottom-bar.js"></script>
 </head>
 	<body>
-		<div class="top-bar"> 
-	<div class="top-bar-contents"> 
-		<div class="align-middle-right"> <img class="euphoric-logo" src="global/assets/images/logo.png" alt="Logo"> </div> 
-		<a  class="header-page-link-big" href="index.html"> Euphoric Circus!</a>
-		<a class="header-page-link" href="about-us.html"> About us </a> 
-		<a class="header-page-link" href="why-social-circus.html">  Why social circus?  </a> 
-		<a class="header-page-link" href="gallery.html">Gallery</a>
-		<a class="header-page-link" href="newsletters.html"> Newsletters </a> 
-		<a class="header-page-link" href="get-involved.html"> Get involved </a> 
-		<a class="header-page-link" href="contact.html"> Contact us </a>
-		<div class="align-middle-right"> <img class="burger-menu" src="global/assets/images/burgir-menu.svg" alt="pages menu"> </div> 
+		<div x-data="{ menuOpen: false }">
+	<div class="top-bar"> 
+		<div class="top-bar-contents"> 
+			<div class="align-middle-right"> <img class="euphoric-logo" src="global/assets/images/logo.png" alt="Logo"> </div> 
+			<a  class="header-page-link-big" href="index.html"> Euphoric Circus!</a>
+			<a class="header-page-link" href="about-us.html"> About us </a> 
+			<a class="header-page-link" href="meet-the-team.html">  Meet the team </a> 
+			<a class="header-page-link" href="gallery.html">Gallery</a>
+			<a class="header-page-link" href="newsletters.html"> Newsletters </a> 
+			<a class="header-page-link" href="get-involved.html"> Get involved </a> 
+			<a class="header-page-link" href="contact.html"> Contact us </a>
+			<div class="align-middle-right"  x-on:click="menuOpen = !menuOpen"> <img class="burger-menu" src="global/assets/images/burgir-menu.svg" alt="pages menu"> </div> 
+		</div>
+	</div>
+	<div :class="menuOpen ? 'side-bar-open' : 'side-bar'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-90"></div>
+	<div class="float-rounded-corner"> <img src="global/assets/images/header-rounded-corner.svg" alt="header rounded corner"> </div> 
+
+	<div class="mobile-menu-overlay"  x-show="menuOpen"></div>
+	<div class="mobile-menu-decor-left"  x-show="menuOpen"> <img src="global/assets/images/Left-Decor.svg" alt="Decor"> </div> 
+	<div class="mobile-menu-decor-top"  x-show="menuOpen"> <img src="global/assets/images/Top-Decor.svg" alt="Decor"> </div> 
+	<div class="mobile-menu-decor-right"  x-show="menuOpen"> <img src="global/assets/images/Right-Decor.svg" alt="Decor"> </div> 
+
+
+	<div class="mob-drop-but-container">
+		<button class="mobile-dropdown-menu-button-1" x-show="menuOpen" onclick="window.location.href='index.html'">Home <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"> </button>
+		<button class="mobile-dropdown-menu-button-2" x-show="menuOpen" onclick="window.location.href='about-us.html'">About us <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-3" x-show="menuOpen" onclick="window.location.href='meet-the-team.html">Meet the team <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-4" x-show="menuOpen" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-5" x-show="menuOpen" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-6" x-show="menuOpen" onclick="window.location.href='get-involved.html'">Get involved <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-7" x-show="menuOpen" onclick="window.location.href='why-social-circus.html'">Why social circus? <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-8" x-show="menuOpen" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="global/assets/images/page-link-arrow.svg" alt="arrow"></button>
 	</div>
 </div>
-<div class="side-bar"></div>
-<div class="float-rounded-corner"> <img src="global/assets/images/header-rounded-corner.svg" alt="header rounded corner"> </div> 
 
 
 		<img class="jumping-boy-img" src="global/assets/images/jumping-boy-logo-yellow.png" alt="Jumping Boy Logo">
 		<div class="page-contents-wrapper">
-			<div class="mobile-menu-overlay"></div>
-			<div class="mobile-menu-decor-left"> <img src="global/assets/images/Left-Decor.svg" alt="Decor"> </div> 
-			<div class="mobile-menu-decor-top"> <img src="global/assets/images/Top-Decor.svg" alt="Decor"> </div> 
-			<div class="mobile-menu-decor-right"> <img src="global/assets/images/Right-Decor.svg" alt="Decor"> </div> 
 			<div class="index-intro-grid">
 				<div>
 					<h1> Come and visit the Euphoric Circus!</h1>
@@ -41,6 +56,9 @@
 			</div>
 			<div class="page-header"> Experience the Magic: Captivating Moments from Our Social Circus </div>
 			<div class="section-intro">Immerse yourself in the electrifying world of social circus through our captivating collection of images and videos. Witness the transformative power of circus arts as we empower and uplift young individuals from all walks of life. Explore the vibrant scenes of acrobatics, juggling, and aerial performances, showcasing the joy, resilience, and camaraderie fostered within our community. Step into the spotlight and discover the magic of social circus with us.</div>
+			<div class="vert-spacing-m"></div>
+			<div class="page-header"> Our Mission: Empowering Youth Through Circus Arts </div>
+			<div class="section-intro">At Euphoric Circus, our mission is simple yet profound: to empower young individuals through the transformative power of circus arts. We believe in providing a platform where every youth can discover their unique talents, build essential life skills, and foster a sense of belonging within their community. Through engaging workshops, mentorship programs, and creative expression, we aim to inspire confidence, resilience, and a lifelong passion for learning. Join us as we harness the magic of circus to shape a brighter future for today's youth.</div>
 		</div>
 
 		

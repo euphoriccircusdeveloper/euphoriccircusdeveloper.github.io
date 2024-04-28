@@ -1,6 +1,3 @@
-document.addEventListener("DOMContentLoaded", setDynamicElementsContent);
-
-//start of -----------------------------------------------------
 async function setDynamicElementsContent(){
 	var prefix = "D-"
 	var corrContentFuncNameStart = "contentGetter_"
@@ -60,12 +57,3 @@ async function setDynamicElementsContent(){
 		element.innerHTML = elementContent;
 	}
 }
-
-//end of -----------------------------------------------------
-
-//--content getters--
-
-async function contentGetter_text_lines() {
-	return "<h1> This surrrreeellllyyyy is the dynamic content </h1>"
-}
-
