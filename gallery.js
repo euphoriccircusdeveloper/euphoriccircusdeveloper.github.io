@@ -66,12 +66,12 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
-	console.log("! getting the gallery images !"
+	console.log("! getting the gallery images !")
 	var gallery_images_dir="global/assets/images/page-images/gallery-images/"
-	var gallery_images_list=get_gallery_images(gallery_images_dir)
+	var gallery_images_list=await get_gallery_images(gallery_images_dir)
 	console.log("	! got the images list: !")
 	console.log(gallery_images_list)
-	var constructed_html = get_images_string(gallery_files_list)
+	var constructed_html = await get_images_string(gallery_files_list)
 	console.log("	! got the constructed html: !")
 	console.log(constructed_html)
 	return constructed_html
