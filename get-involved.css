@@ -59,6 +59,38 @@ button:hover {
   height: 100%;
 }
 
+.full-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .full-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .full-width-img {
+    max-width: 400px;
+  }
+}
+
+.half-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .half-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .half-width-img {
+    max-width: 400px;
+  }
+}
+
 .ux-red {
   background-color: red;
 }
@@ -109,7 +141,7 @@ button:hover {
   width: 100%;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
-  height: 700px;
+  height: 1600px;
 }
 .roles-wrapper-right-offset {
   padding: 50px;

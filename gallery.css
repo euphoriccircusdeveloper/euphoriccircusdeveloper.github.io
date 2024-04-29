@@ -59,6 +59,38 @@ button:hover {
   height: 100%;
 }
 
+.full-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .full-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .full-width-img {
+    max-width: 400px;
+  }
+}
+
+.half-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .half-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .half-width-img {
+    max-width: 400px;
+  }
+}
+
 .ux-red {
   background-color: red;
 }
@@ -103,6 +135,18 @@ button:hover {
 
 .vert-spacing-m {
   padding: 20px 0px 20px 0px;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: calc(50% - 10px); /* Adjust the width as needed */
+  max-width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=gallery.css.map */

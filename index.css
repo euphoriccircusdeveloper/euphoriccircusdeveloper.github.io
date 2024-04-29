@@ -41,7 +41,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .index-intro-grid, .ux-grid-specific {
+.ux-grid, .empowering, .captivating-moments-img-grid, .index-intro-grid, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -57,6 +57,38 @@ button:hover {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.full-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .full-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .full-width-img {
+    max-width: 400px;
+  }
+}
+
+.half-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .half-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .half-width-img {
+    max-width: 400px;
+  }
 }
 
 .ux-red {
@@ -121,6 +153,18 @@ button:hover {
 
 .juggle-pins-decor {
   height: 100vh;
+}
+
+.captivating-moments-img-grid {
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  height: 800px;
+}
+
+.empowering {
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: auto;
+  height: 500px;
 }
 
 /*# sourceMappingURL=index.css.map */
