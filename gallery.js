@@ -66,18 +66,36 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
+	out=await get_files_list_2
+	return out
+	/*
 	console.log("! getting the gallery images !")
 	var gallery_images_dir="global/assets/images/page-images/gallery-images/"
 	var gallery_images_list=await get_gallery_images(gallery_images_dir)
 	console.log("	! got the images list: !")
 	console.log(gallery_images_list)
-	var constructed_html = await get_images_string(gallery_files_list)
+	var constructed_html = await get_images_string(gallery_images_list)
 	console.log("	! got the constructed html: !")
 	console.log(constructed_html)
 	return constructed_html
+	*/
 }
 
 //tier 2
+
+async function get_files_list_2(){
+		console.log("getting the images list")
+		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/global/assets/images/page-images/gallery-images');
+        const data = await response.json();
+		console.log("got the data")
+		console.log(data)
+        let htmlString = '<ul>';
+        for (let file of data) {
+          htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+        }
+        htmlString += '</ul>';
+		return htmlString;
+}
 
 async function get_gallery_images(directory) {
     try {
