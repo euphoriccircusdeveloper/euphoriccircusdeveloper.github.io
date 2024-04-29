@@ -51,16 +51,7 @@
 				<div class="section-intro"> Experience the excitement of Euphoric Circus through our captivating gallery. Browse through stunning images showcasing the energy and creativity of our workshops and performances. From thrilling acrobatics to mesmerizing juggling acts, each picture captures the essence of our circus community. </div> 
 				<div class="vert-spacing-m"></div>
 
-				<div x-data="gallery">
-				  <template x-for="(image, index) in images" :key="index">
-					<div x-show="index % 2 === 0" class="grid-container">
-					  <img :src="image" alt="Image" class="image">
-					  <template x-if="images[index + 1]">
-						<img :src="images[index + 1]" alt="Image" class="image">
-					  </template>
-					</div>
-				  </template>
-				</div>
+				<div id="D-gallery-images"> </div>
 			</div>
 
 
