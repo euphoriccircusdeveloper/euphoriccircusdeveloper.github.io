@@ -66,7 +66,7 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
-	out=await get_files_list_2
+	out=await get_files_list_2()
 	return out
 	/*
 	console.log("! getting the gallery images !")
