@@ -66,19 +66,18 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
-	out=await get_files_list_2()
-	return out
-	/*
 	console.log("! getting the gallery images !")
-	var gallery_images_dir="global/assets/images/page-images/gallery-images/"
-	var gallery_images_list=await get_gallery_images(gallery_images_dir)
+	var gallery_images_dir_from_root="global/assets/images/page-images/gallery-images/"
+	var gallery_images_list=await get_gallery_images(gallery_images_dir_from_root)
+
 	console.log("	! got the images list: !")
 	console.log(gallery_images_list)
+
 	var constructed_html = await get_images_string(gallery_images_list)
 	console.log("	! got the constructed html: !")
 	console.log(constructed_html)
+
 	return constructed_html
-	*/
 }
 
 //tier 2
@@ -97,16 +96,22 @@ async function get_files_list_2(){
 		return htmlString;
 }
 
+
+/**
+ * @return: essentially; {{filname:'name', filepath:'path'},{...},{...},..., {...}}
+**/
 async function get_gallery_images(directory) {
+	github_images_repo=`https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/${directory}`
     try {
-        const response = await fetch(directory);
+
+		const response = await fetch(github_images_repo);
         if (!response.ok) {
             throw new Error('Failed to fetch images: ' + response.statusText);
         }
-        const text = await response.text();
-        // Split the response text by newline character to get filenames
-        const files = text.split('\n');
-        return files;
+		//can use file.path to get the path and file.name to get the name
+        const data = await response.json();
+
+        return data;
     } catch (error) {
         console.error(error);
         return [];
@@ -116,7 +121,6 @@ async function get_gallery_images(directory) {
 async function get_images_string(gallery_files_list){
 	// Assuming gallery_files_list is an array containing the filenames
 	// Construct the base URL for the images
-	var baseUrl = "global/assets/images/page-images/gallery-images/";
 
 	// Initialize the constructedHtml variable
 	var constructedHtml = "";
@@ -130,26 +134,26 @@ async function get_images_string(gallery_files_list){
 		}
 
 		// Get the filenames
-		var filename1 = gallery_files_list[i];
-		var filename2 = (numImages === 2) ? gallery_files_list[i + 1] : "";
+		var file1 = gallery_files_list[i];
+		var file2 = (numImages === 2) ? gallery_files_list[i + 1] : "";
 
 		// Construct HTML markup for the images
 		var baseString = `
 		<div class="grid-container">
-			<img class="${numImages === 1 ? 'full-width-img' : 'half-width-img'}" src="${baseUrl}${filename1}" alt="">
-	`;
+			<img class="${numImages === 1 ? 'full-width-img' : 'half-width-img'}" src="${file1.path}" alt="">
+		`;
 
 		// If there are 2 images, add the second image
 		if (numImages === 2) {
 			baseString += `
-			<img class="half-width-img" src="${baseUrl}${filename2}" alt="">
-		`;
+			<img class="half-width-img" src="${file2.path}" alt="">
+			`;
 		}
 
 		// Close the grid container
 		baseString += `
-		</div>
-	`;
+			</div>
+		`;
 
 		// Append the baseString to constructedHtml
 		constructedHtml += baseString;
@@ -175,17 +179,17 @@ async function contentGetter_gallery_images() {
 	for(int i = 0; i < len(gallery_files_list); i+=2){
 		//determine if there are 1 or 2 images on this row 
 		var numImages = 1
-		if filename2index < len(gallery_files_list){
+		if file2index < len(gallery_files_list){
 			numImages = 2
 		}
 
 		//get the first image
-		var filename1 = gallery_files_list[i]
+		var file1 = gallery_files_list[i]
 
 		if(numImages==1){
 			var base_string = `
 			<div class="grid-container">
-				<img class="full-width-img" src="global/assets/images/page-images/gallery-images/${filename1}" alt="">
+				<img class="full-width-img" src="global/assets/images/page-images/gallery-images/${file1}" alt="">
 			  </template>
 			</div>
 			`
@@ -193,12 +197,12 @@ async function contentGetter_gallery_images() {
 		else{
 			//2 images
 
-			var filename2 = gallery_files_list[i+1]
+			var file2 = gallery_files_list[i+1]
 
 			var base_string = `
 			<div class="grid-container">
-				<img class="half-width-img" src="global/assets/images/page-images/gallery-images/${filename1}" alt="">
-				<img class="half-width-img" src="global/assets/images/page-images/gallery-images/${filename2}" alt="">
+				<img class="half-width-img" src="global/assets/images/page-images/gallery-images/${file1}" alt="">
+				<img class="half-width-img" src="global/assets/images/page-images/gallery-images/${file2}" alt="">
 			  </template>
 			</div>
 			`
