@@ -67,7 +67,7 @@ async function setDynamicElementsContent(){
 //tier 1
 async function contentGetter_gallery_images() {
 	console.log("! getting the gallery images !")
-	var gallery_images_dir_from_root="global/assets/images/page-images/gallery-images/"
+	var gallery_images_dir_from_root="global/graphical_media/images/page-images/gallery-images/"
 	var gallery_images_list=await get_gallery_images(gallery_images_dir_from_root)
 
 	console.log("	! got the images list: !")
@@ -84,7 +84,7 @@ async function contentGetter_gallery_images() {
 
 async function get_files_list_2(){
 		console.log("getting the images list")
-		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/global/assets/images/page-images/gallery-images');
+		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/global/graphical_media/images/page-images/gallery-images');
         const data = await response.json();
 		console.log("got the data")
 		console.log(data)
@@ -169,7 +169,7 @@ async function get_images_string(gallery_files_list){
 /*
 async function contentGetter_gallery_images() {
 	var filename_placeholder="[[filename]]";
-	var gallery_images_dir="global/assets/images/page-images/gallery-images/"
+	var gallery_images_dir="global/graphical_media/images/page-images/gallery-images/"
 
 	//get the list of filenames (e.g. img1.jpeg)
 	var gallery_files_list = get_gallery_images()
@@ -189,7 +189,7 @@ async function contentGetter_gallery_images() {
 		if(numImages==1){
 			var base_string = `
 			<div class="grid-container">
-				<img class="full-width-img" src="global/assets/images/page-images/gallery-images/${file1}" alt="">
+				<img class="full-width-img" src="global/graphical_media/images/page-images/gallery-images/${file1}" alt="">
 			  </template>
 			</div>
 			`
@@ -201,8 +201,8 @@ async function contentGetter_gallery_images() {
 
 			var base_string = `
 			<div class="grid-container">
-				<img class="half-width-img" src="global/assets/images/page-images/gallery-images/${file1}" alt="">
-				<img class="half-width-img" src="global/assets/images/page-images/gallery-images/${file2}" alt="">
+				<img class="half-width-img" src="global/graphical_media/images/page-images/gallery-images/${file1}" alt="">
+				<img class="half-width-img" src="global/graphical_media/images/page-images/gallery-images/${file2}" alt="">
 			  </template>
 			</div>
 			`
