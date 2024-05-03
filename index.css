@@ -1,18 +1,42 @@
 @font-face {
   font-family: "OpenDyslexic-Bold";
-  src: url("global/graphical_media/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-BoldItalic";
-  src: url("global/graphical_media/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Italic";
-  src: url("global/graphical_media/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Regular";
-  src: url("global/graphical_media/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-Bold";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin-Bold.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-BoldItalic";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin-BoldItalic.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-Italic";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin-Italic.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin.woff") format("opentype");
+}
+@font-face {
+  font-family: "MerriweatherSans-Medium";
+  src: url("global/fonts/Merriweather-sans/MerriweatherSans-Medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "DoppioOne-Regular";
+  src: url("global/fonts/doppio_one/DoppioOne-Regular.ttf") format("opentype");
 }
 html {
   font-size: 16px;
@@ -20,7 +44,7 @@ html {
 
 body {
   margin: 0px;
-  font-family: "OpenDyslexic-Regular", sans-serif;
+  font-family: "DoppioOne-Regular", sans-serif;
 }
 
 h1 {
@@ -77,7 +101,7 @@ button:hover {
 
 .half-width-img {
   border-radius: 30px;
-  width: 100%;
+  width: 90%;
   max-width: 800px;
 }
 @media screen and (max-width: 860px) {
@@ -148,7 +172,13 @@ button:hover {
   top: 100px;
   width: 50vw;
   height: auto;
-  z-index: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 720px) {
+  .jumping-boy-img {
+    top: calc(100px + 80px);
+    width: 90vw;
+  }
 }
 
 .juggle-pins-decor {
@@ -158,13 +188,23 @@ button:hover {
 .captivating-moments-img-grid {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: 0.5fr 0.5fr;
-  height: 800px;
+  height: 1000px;
+}
+@media screen and (max-width: 720px) {
+  .captivating-moments-img-grid {
+    height: 350px;
+  }
 }
 
 .empowering {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
-  height: 500px;
+  height: 650px;
+}
+@media screen and (max-width: 720px) {
+  .empowering {
+    height: 150px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,18 +1,42 @@
 @font-face {
   font-family: "OpenDyslexic-Bold";
-  src: url("../../../global/graphical_media/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+  src: url("../../../global/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-BoldItalic";
-  src: url("../../../global/graphical_media/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+  src: url("../../../global/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Italic";
-  src: url("../../../global/graphical_media/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+  src: url("../../../global/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Regular";
-  src: url("../../../global/graphical_media/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+  src: url("../../../global/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-Bold";
+  src: url("../../../global/fonts/sylexiad/SylexiadSerifThin-Bold.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-BoldItalic";
+  src: url("../../../global/fonts/sylexiad/SylexiadSerifThin-BoldItalic.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-Italic";
+  src: url("../../../global/fonts/sylexiad/SylexiadSerifThin-Italic.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin";
+  src: url("../../../global/fonts/sylexiad/SylexiadSerifThin.woff") format("opentype");
+}
+@font-face {
+  font-family: "MerriweatherSans-Medium";
+  src: url("../../../global/fonts/Merriweather-sans/MerriweatherSans-Medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "DoppioOne-Regular";
+  src: url("../../../global/fonts/doppio_one/DoppioOne-Regular.ttf") format("opentype");
 }
 html {
   font-size: 16px;
@@ -20,7 +44,7 @@ html {
 
 body {
   margin: 0px;
-  font-family: "OpenDyslexic-Regular", sans-serif;
+  font-family: "DoppioOne-Regular", sans-serif;
 }
 
 h1 {
@@ -77,7 +101,7 @@ button:hover {
 
 .half-width-img {
   border-radius: 30px;
-  width: 100%;
+  width: 90%;
   max-width: 800px;
 }
 @media screen and (max-width: 860px) {
@@ -100,7 +124,7 @@ button:hover {
   width: 100%;
 }
 
-.align-centre, .header-page-link-big, .header-page-link {
+.align-centre, .header-page-link-big, .test-big, .header-page-link, .test {
   display: flex;
   justify-content: center; /* Horizontal center */
   align-items: center; /* Vertical center */
@@ -193,32 +217,32 @@ button:hover {
   }
 }
 
-.header-page-link {
+.header-page-link, .test {
   font-size: 1.25rem;
   font-family: "OpenDyslexic-Bold", sans-serif;
   text-align: center;
 }
 @media screen and (max-width: 1100px) {
-  .header-page-link {
+  .header-page-link, .test {
     font-size: 1rem;
   }
 }
 @media screen and (max-width: 865px) {
-  .header-page-link {
+  .header-page-link, .test {
     font-size: 0.75rem;
   }
 }
 @media screen and (max-width: 720px) {
-  .header-page-link {
+  .header-page-link, .test {
     display: none;
   }
 }
 
-.header-page-link-big {
+.header-page-link-big, .test-big {
   font-size: 1.5rem;
 }
 @media screen and (max-width: 860px) {
-  .header-page-link-big {
+  .header-page-link-big, .test-big {
     font-size: 1.25rem;
   }
 }
@@ -378,6 +402,48 @@ button:hover {
 
 .mobile-dropdown-menu-button-8 {
   top: calc(100px + 25px + 30px + 7 * 80px);
+}
+
+.test {
+  position: relative;
+}
+
+.test-big {
+  position: relative;
+}
+
+.squiggle-test, .squiggle-test-big-link {
+  position: absolute;
+  bottom: 10px;
+}
+
+.squiggle-test-big-link {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+@media screen and (max-width: 720px) {
+  .squiggle-test-big-link {
+    bottom: 10px;
+  }
+}
+
+.squiggle {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  background-color: #493DAF;
+  height: 350px;
+  width: 70px;
+  border-radius: 0px 0px 0px 50px; /* topleft, topright, bottomright, bottomleft (I think lol)*/
+  z-index: 1;
+}
+@media screen and (max-width: 720px) {
+  .squiggle {
+    display: inline;
+    width: 33.3333333333px;
+    height: 150px;
+  }
 }
 
 /*# sourceMappingURL=top-bar.css.map */
