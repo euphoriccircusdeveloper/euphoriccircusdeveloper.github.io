@@ -1,9 +1,10 @@
+
 <html>
 	<head>
-		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<link rel=stylesheet href="newsletters.css">
-		<script src="newsletters.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
+		<script src="annual-report.js"></script>
+		<link rel=stylesheet href="annual-report.css">
 	<link rel=stylesheet href="global/reusables/top-bar/top-bar.css">
 <script src="global/reusables/top-bar/top-bar.js"></script>
 <link rel=stylesheet href="global/reusables/bottom-bar/bottom-bar.css">
@@ -68,26 +69,21 @@
 
 
 			<div class="page-contents-wrapper">
-				<h1> See what we've been up to</h1>
-				<div  class="section-intro"> Here you'll find our weekly newsletter and our annual report</div>
-				<div class="vert-spacing-m"></div>
-				<div class="page-header"> Weekly newsletter </div>
-				<div class="section-intro"> Explore our weekly newsletter to stay informed about all things Euphoric Circus. Dive into the latest highlights, announcements, and upcoming events. Our newsletter keeps you connected to our vibrant community and engaged with our mission.</div> 
-				<button class="standard-button" onclick="window.location.href='annual-report.html'"> View report  </button>
-				<div class="vert-spacing-m"></div>
-				<div class="page-header"> Annual report </div>
-				<div class="section-intro"> View our annual report to see the impact of Euphoric Circus over the past year. Discover our achievements, challenges, and plans for the future as we continue to empower youth through circus arts. </div> 
-				<button class="standard-button" onclick="window.location.href='annual-report.html'"> View report  </button>
-				<div class="vert-spacing-m"></div>
+				<div class="pdf-side-hider-left"></div>
+				<div class="pdf-side-hider-right"></div>
+				<div class="pdf-side-hider-top "></div>
 
-				<div id="D-text-lines"> </div>
+				<div class="pdf-container">
+					<!-- <embed src="global/images/reports/report.pdf" type="application/pdf" width="100%" height="100%"> -->
+					<!-- <iframe src="global/images/reports/report.pdf" width="100%" height="100%" style="border: none;"></iframe> -->
+					<embed src="global/images/reports/report.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="100%" style="border: none;" />
+				</div>
 
-				And the loaded text is: 
-				<div id="D-loaded-txt"> </div>
 
 			</div>
 
-			
+
+		
 <div class="bottom-bar">
 	<div class="bottom-bar-content-wrapper">
 
@@ -129,6 +125,8 @@
 		<div class="rights-declaration"> EuphoricCircus. All rights reserved </div>
 	</div>
 </div>
+
+
 
 
 	</body>

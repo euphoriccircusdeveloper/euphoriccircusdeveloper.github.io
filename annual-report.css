@@ -172,4 +172,34 @@ button:hover {
   margin: 20px 0px 0px 20px;
 }
 
-/*# sourceMappingURL=contact.css.map */
+.pdf-container {
+  width: 83vw;
+  height: 600px; /* Adjust height as needed */
+  overflow: auto; /* Enable scrolling */
+}
+
+.pdf-side-hider, .pdf-side-hider-top, .pdf-side-hider-right, .pdf-side-hider-left {
+  position: absolute;
+  background-color: white; /* Color with opacity */
+  z-index: 0;
+}
+
+.pdf-side-hider-left {
+  left: 40px;
+  width: 40px;
+  height: 600px;
+}
+
+.pdf-side-hider-right {
+  left: 83vw;
+  width: 40px;
+  height: 600px;
+}
+
+.pdf-side-hider-top {
+  left: 40px;
+  width: 83vw;
+  height: 40px;
+}
+
+/*# sourceMappingURL=annual-report.css.map */

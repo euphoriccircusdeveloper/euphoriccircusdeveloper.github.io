@@ -138,6 +138,7 @@ button:hover {
 
 .page-contents-wrapper {
   margin: 40px;
+  margin-right: 100px;
 }
 
 .page-header {
@@ -159,6 +160,16 @@ button:hover {
 
 .vert-spacing-m {
   padding: 20px 0px 20px 0px;
+}
+
+.standard-button {
+  background-color: #FFDD56;
+  border: 1px solid black;
+  border-radius: 13px;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 20px 0px 0px 20px;
 }
 
 .about-us-intro-img {
