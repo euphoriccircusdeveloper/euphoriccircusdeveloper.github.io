@@ -137,8 +137,12 @@ button:hover {
 }
 
 .page-contents-wrapper {
-  margin: 40px;
-  margin-right: 100px;
+  margin: 40px 100px 40px 40px;
+}
+@media screen and (max-width: 720px) {
+  .page-contents-wrapper {
+    margin: 20px 20px 20px 20px; /* top right bottom left */
+  }
 }
 
 .page-header {

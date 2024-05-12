@@ -137,8 +137,12 @@ button:hover {
 }
 
 .page-contents-wrapper {
-  margin: 40px;
-  margin-right: 100px;
+  margin: 40px 100px 40px 40px;
+}
+@media screen and (max-width: 720px) {
+  .page-contents-wrapper {
+    margin: 20px 20px 20px 20px; /* top right bottom left */
+  }
 }
 
 .page-header {
@@ -149,7 +153,7 @@ button:hover {
   font-size: 1.5rem;
 }
 
-.page-intro {
+.page-intro, .index-page-intro {
   margin: 20px 0px 0px 0px;
 }
 
@@ -175,6 +179,23 @@ button:hover {
 .index-intro-grid {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
+  height: 100vh;
+}
+
+.index-page-intro {
+  width: 100%;
+}
+@media screen and (max-width: 720px) {
+  .index-page-intro {
+    max-width: 70%;
+  }
+}
+
+.last-item-takes-remaining-vert-space {
+  display: grid;
+  grid-template-rows: auto auto 1fr; /* First two rows take content height, third row takes remaining space */
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .jumping-boy-img {
@@ -191,9 +212,29 @@ button:hover {
     width: 90vw;
   }
 }
+@media screen and (max-width: 460px) {
+  .jumping-boy-img {
+    top: calc(100px + 80px + 40px);
+    width: 90vw;
+  }
+}
+
+.juggle-pins-decor-wrapper {
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 480px) {
+  .juggle-pins-decor-wrapper {
+    display: none;
+  }
+}
 
 .juggle-pins-decor {
-  height: 100vh;
+  margin: 60px 0px 0px 20px;
+  height: 86.5%;
+  overflow-y: hidden;
+  min-height: 400px;
 }
 
 .captivating-moments-img-grid {
