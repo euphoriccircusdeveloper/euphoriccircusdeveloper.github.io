@@ -190,14 +190,37 @@ button:hover {
 
 .pdf-side-hider-left {
   left: 40px;
-  width: 40px;
+  width: calc(41px + 4vw);
   height: 600px;
+}
+@media screen and (max-width: 1255px) {
+  .pdf-side-hider-left {
+    /* Width at which the pdf no longer grows its side bar and instead shrinks the pdf */
+    width: 41px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .pdf-side-hider-left {
+    left: 20px;
+  }
 }
 
 .pdf-side-hider-right {
-  left: 83vw;
-  width: 40px;
+  left: 78vw;
+  width: calc(41px + 5vw);
   height: 600px;
+}
+@media screen and (max-width: 1255px) {
+  .pdf-side-hider-right {
+    /* Width at which the pdf no longer grows its side bar and instead shrinks the pdf */
+    left: 83vw;
+    width: 41px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .pdf-side-hider-right {
+    left: 80vw; /* This changes because the margins get smaller on mobile */
+  }
 }
 
 .pdf-side-hider-top {
