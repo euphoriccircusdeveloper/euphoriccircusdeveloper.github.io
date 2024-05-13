@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "OpenDyslexic-Bold";
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-BoldItalic";
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-Italic";
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "OpenDyslexic-Regular";
+  src: url("global/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-Bold";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin-Bold.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-BoldItalic";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin-BoldItalic.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin-Italic";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin-Italic.woff") format("opentype");
+}
+@font-face {
+  font-family: "SylexiadSerifThin";
+  src: url("global/fonts/sylexiad/SylexiadSerifThin.woff") format("opentype");
+}
+@font-face {
+  font-family: "MerriweatherSans-Medium";
+  src: url("global/fonts/Merriweather-sans/MerriweatherSans-Medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "DoppioOne-Regular";
+  src: url("global/fonts/doppio_one/DoppioOne-Regular.ttf") format("opentype");
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0px;
+  font-family: "DoppioOne-Regular", sans-serif;
+}
+
+h1 {
+  color: #493DAF;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+.ux-grid, .ux-grid-specific {
+  display: grid;
+  height: 100%;
+}
+
+.ux-grid-specific {
+  grid-template-columns: auto;
+  grid-template-rows: 0.25fr 0.5fr 0.25fr;
+}
+
+.centre-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.full-width-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .full-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .full-width-img {
+    max-width: 400px;
+  }
+}
+
+.half-width-img {
+  border-radius: 30px;
+  width: 90%;
+  max-width: 800px;
+}
+@media screen and (max-width: 860px) {
+  .half-width-img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .half-width-img {
+    max-width: 400px;
+  }
+}
+
+.ux-red {
+  background-color: red;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.align-centre {
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+}
+
+.align-middle-right {
+  display: flex;
+  justify-content: flex-end; /* Align contents to the right */
+  align-items: center; /* Vertical center */
+}
+
+.page-contents-wrapper {
+  margin: 40px 100px 40px 40px;
+}
+@media screen and (max-width: 720px) {
+  .page-contents-wrapper {
+    margin: 20px 20px 20px 20px; /* top right bottom left */
+  }
+}
+
+.page-header {
+  background: #493DAF;
+  color: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  padding: 30px 20px 30px 20px;
+  font-size: 1.5rem;
+}
+
+.page-intro {
+  margin: 20px 0px 0px 0px;
+}
+
+.section-intro {
+  margin: 20px 0px 0px 0px;
+  padding: 0px 20px 0px 20px;
+}
+
+.vert-spacing-m {
+  padding: 20px 0px 20px 0px;
+}
+
+.standard-button {
+  background-color: #FFDD56;
+  border: 1px solid black;
+  border-radius: 13px;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 20px 0px 0px 20px;
+}
+
+.pdf-container {
+  width: 83vw;
+  height: 600px; /* Adjust height as needed */
+  overflow: auto; /* Enable scrolling */
+}
+
+.pdf-side-hider, .pdf-side-hider-top, .pdf-side-hider-right, .pdf-side-hider-left {
+  position: absolute;
+  background-color: white; /* Color with opacity */
+  z-index: 0;
+}
+
+.pdf-side-hider-left {
+  left: 40px;
+  width: calc(41px + 4vw);
+  height: 600px;
+}
+@media screen and (max-width: 1255px) {
+  .pdf-side-hider-left {
+    /* Width at which the pdf no longer grows its side bar and instead shrinks the pdf */
+    width: 41px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .pdf-side-hider-left {
+    left: 20px;
+  }
+}
+
+.pdf-side-hider-right {
+  left: 78vw;
+  width: calc(41px + 5vw);
+  height: 600px;
+}
+@media screen and (max-width: 1255px) {
+  .pdf-side-hider-right {
+    /* Width at which the pdf no longer grows its side bar and instead shrinks the pdf */
+    left: 83vw;
+    width: 41px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .pdf-side-hider-right {
+    left: 80vw; /* This changes because the margins get smaller on mobile */
+  }
+}
+
+.pdf-side-hider-top {
+  left: 40px;
+  width: 83vw;
+  height: 40px;
+}
+
+/*# sourceMappingURL=weekly-newsletter.css.map */
