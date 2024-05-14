@@ -143,10 +143,11 @@ async function get_images_string(gallery_files_list){
 
 		// Construct HTML markup for the images
 		var baseString = `
-		<div>
+		<div class="team-member-wrapper">
 			<img class="team-member-img" src="${file1.path}" alt="">
 			<h2>${name} </h2>
 			<h4>${role} </h4>
+		</div>
 		`;
 
 		// Close the grid container
