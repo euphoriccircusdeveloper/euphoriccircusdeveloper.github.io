@@ -140,13 +140,17 @@ async function get_images_string(gallery_files_list){
 		// Construct HTML markup for the images
 		var baseString = `
 		<div class="grid-container">
-			<img class="${numImages === 1 ? 'full-width-img' : 'half-width-img'}" src="${file1.path}" alt="">
+			<div class="gallery-img-centre-wrapper">
+			<img class="${numImages === 1 ? 'gallery-img' : 'gallery-img'}" src="${file1.path}" alt="">
+			</div>
 		`;
 
 		// If there are 2 images, add the second image
 		if (numImages === 2) {
 			baseString += `
-			<img class="half-width-img" src="${file2.path}" alt="">
+			<div class="gallery-img-centre-wrapper">
+			<img class="gallery-img" src="${file2.path}" alt="">
+			</div>
 			`;
 		}
 

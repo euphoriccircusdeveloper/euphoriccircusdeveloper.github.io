@@ -178,14 +178,23 @@ button:hover {
 
 .grid-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  margin: 10px 0px 10px 0px; /* top right bottom left */
 }
 
-.image {
-  width: calc(50% - 10px); /* Adjust the width as needed */
+.gallery-img-centre-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+}
+
+.gallery-img {
+  margin: 10px 10px 10px 10px;
+  border-radius: 20px;
+  max-height: 400px;
   max-width: 100%;
-  height: auto;
 }
 
 /*# sourceMappingURL=gallery.css.map */

@@ -429,12 +429,12 @@ button:hover {
 
 .squiggle-test, .squiggle-test-big-link {
   position: absolute;
-  bottom: 10px;
+  bottom: 3px;
 }
 
 .squiggle-test-big-link {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 0px;
 }
 @media screen and (max-width: 720px) {
