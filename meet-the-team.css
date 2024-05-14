@@ -176,4 +176,20 @@ button:hover {
   margin: 20px 0px 0px 20px;
 }
 
+.team-member-img {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 300px;
+}
+@media screen and (max-width: 860px) {
+  .team-member-img {
+    max-width: 200px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .team-member-img {
+    max-width: 150px;
+  }
+}
+
 /*# sourceMappingURL=meet-the-team.css.map */

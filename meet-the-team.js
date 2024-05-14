@@ -97,7 +97,7 @@ async function get_gallery_images(directory) {
 
 		const response = await fetch(github_images_repo);
         if (!response.ok) {
-            throw new Error('Failed to fetch images: ' + response.statusText + ' :o ' + response);
+            throw new Error('Failed to fetch images: ' + response.statusText + ' :o (does the image folder that you are looking for exist on github?) ' + response);
         }
 		//can use file.path to get the path and file.name to get the name
         const data = await response.json();
@@ -127,10 +127,24 @@ async function get_images_string(gallery_files_list){
 		// Get the filenames
 		var file1 = gallery_files_list[i];
 
+				
+		// Get the name
+		const NAME_ROLE_SEPARATOR = "--";
+		const namesSplit = file1.name.split(NAME_ROLE_SEPARATOR);
+		if (namesSplit.length !== 2) {
+			console.log(`Your file name: ${file1.name} is not in the correct format. It must be '<name>${NAME_ROLE_SEPARATOR}<role>.png' where <name> represents the name of the person, with the forename and the surname separate by '_' e.g. John_Doe, and the role must also be separated by '_' e.g. Tech_Advisor. Putting that together you would have John_Doe--Tech_Advisor.png`);
+		}
+		const nameWithUnderscores = namesSplit[0];
+		const roleWithUnderscores = namesSplit[1];
+		const name = nameWithUnderscores.split("_");
+		const role = roleWithUnderscores.split("_");
+
 		// Construct HTML markup for the images
 		var baseString = `
 		<div>
-			<img class="full-width-img" src="${file1.path}" alt="">
+			<img class="team-member-img" src="${file1.path}" alt="">
+			<h2>${name} </h2>
+			<h4>${role} </h4>
 		`;
 
 		// Close the grid container
