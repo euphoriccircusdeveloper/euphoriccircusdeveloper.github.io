@@ -177,7 +177,7 @@ button:hover {
 }
 
 .team-member-img {
-  border-radius: 30px;
+  border-radius: 0px 0px 100px 100px;
   width: 100%;
   max-width: 300px;
 }

@@ -136,8 +136,10 @@ async function get_images_string(gallery_files_list){
 		}
 		const nameWithUnderscores = namesSplit[0];
 		const roleWithUnderscores = namesSplit[1];
-		const name = nameWithUnderscores.split("_");
-		const role = roleWithUnderscores.split("_");
+		const name = nameWithUnderscores.split("_").join(" ");
+		const roleWithFileExtension = roleWithUnderscores.split("_").join(" ");
+		const lastDotIndex = roleWithFileExtension.lastIndexOf(".");
+		const role = roleWithFileExtension.substring(0, lastDotIndex);
 
 		// Construct HTML markup for the images
 		var baseString = `
