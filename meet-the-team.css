@@ -183,11 +183,14 @@ button:hover {
 
 .team-member-wrapper {
   display: flex;
-  /*justify-content: center;*/
+  flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
   margin: 20px 30px 20px 30px; /* Top right bottom left */
+}
+@media screen and (max-width: 720px) {
+  .team-member-wrapper {
+    width: 100%;
+  }
 }
 
 .team-member-img {
@@ -198,6 +201,7 @@ button:hover {
 @media screen and (max-width: 860px) {
   .team-member-img {
     max-width: 200px;
+    border-radius: 0px 0px 50px 50px;
   }
 }
 @media screen and (max-width: 720px) {

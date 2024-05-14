@@ -146,7 +146,7 @@ async function get_images_string(gallery_files_list){
 		<div class="team-member-wrapper">
 			<img class="team-member-img" src="${file1.path}" alt="">
 			<h2>${name} </h2>
-			<h4>${role} </h4>
+			<div>${role} </div>
 		</div>
 		`;
 
