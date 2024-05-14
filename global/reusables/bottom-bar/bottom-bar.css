@@ -439,9 +439,7 @@ button:hover {
 }
 
 .partner-img {
-  width: 100%;
-  max-width: 300px;
-  min-width: 150px;
+  max-width: calc(100% - 20px); /* This is 100% - margin of the wrapper. should change 20px to partner-img-wrapper-margin in future */
 }
 
 /*# sourceMappingURL=bottom-bar.css.map */
