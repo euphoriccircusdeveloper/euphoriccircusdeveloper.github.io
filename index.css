@@ -1,42 +1,50 @@
 @font-face {
   font-family: "OpenDyslexic-Bold";
-  src: url("global/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
+  src: url("shared/fonts/open-dyslexic/OpenDyslexic-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-BoldItalic";
-  src: url("global/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
+  src: url("shared/fonts/open-dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Italic";
-  src: url("global/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
+  src: url("shared/fonts/open-dyslexic/OpenDyslexic-Italic.otf") format("opentype");
 }
 @font-face {
   font-family: "OpenDyslexic-Regular";
-  src: url("global/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
+  src: url("shared/fonts/open-dyslexic/OpenDyslexic-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "SylexiadSerifThin-Bold";
-  src: url("global/fonts/sylexiad/SylexiadSerifThin-Bold.woff") format("opentype");
+  src: url("shared/fonts/sylexiad/SylexiadSerifThin-Bold.woff") format("opentype");
 }
 @font-face {
   font-family: "SylexiadSerifThin-BoldItalic";
-  src: url("global/fonts/sylexiad/SylexiadSerifThin-BoldItalic.woff") format("opentype");
+  src: url("shared/fonts/sylexiad/SylexiadSerifThin-BoldItalic.woff") format("opentype");
 }
 @font-face {
   font-family: "SylexiadSerifThin-Italic";
-  src: url("global/fonts/sylexiad/SylexiadSerifThin-Italic.woff") format("opentype");
+  src: url("shared/fonts/sylexiad/SylexiadSerifThin-Italic.woff") format("opentype");
 }
 @font-face {
   font-family: "SylexiadSerifThin";
-  src: url("global/fonts/sylexiad/SylexiadSerifThin.woff") format("opentype");
+  src: url("shared/fonts/sylexiad/SylexiadSerifThin.woff") format("opentype");
 }
 @font-face {
   font-family: "MerriweatherSans-Medium";
-  src: url("global/fonts/Merriweather-sans/MerriweatherSans-Medium.ttf") format("opentype");
+  src: url("shared/fonts/Merriweather-sans/MerriweatherSans-Medium.ttf") format("opentype");
 }
 @font-face {
   font-family: "DoppioOne-Regular";
-  src: url("global/fonts/doppio_one/DoppioOne-Regular.ttf") format("opentype");
+  src: url("shared/fonts/doppio_one/DoppioOne-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Suwannaphum-Regular";
+  src: url("shared/fonts/Suwannaphum/Suwannaphum-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Suwannaphum-Bold";
+  src: url("shared/fonts/Suwannaphum/Suwannaphum-Bold.ttf") format("opentype");
 }
 html {
   font-size: 16px;
@@ -44,12 +52,13 @@ html {
 
 body {
   margin: 0px;
-  font-family: "DoppioOne-Regular", sans-serif;
+  font-family: "Suwannaphum-Regular", sans-serif;
 }
 
 h1 {
   color: #493DAF;
   margin: 0px;
+  font-family: "Suwannaphum-Bold", sans-serif;
 }
 
 a {
@@ -65,7 +74,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .empowering, .captivating-moments-img-grid, .index-intro-grid, .ux-grid-specific {
+.ux-grid, .empowering, .empowering-wrapper, .captivating-moments-img-grid, .index-intro-grid, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -103,6 +112,7 @@ button:hover {
   border-radius: 30px;
   width: 90%;
   max-width: 800px;
+  margin: 8px 8px 8px 8px;
 }
 @media screen and (max-width: 860px) {
   .half-width-img {
@@ -210,6 +220,12 @@ button:hover {
   .jumping-boy-img {
     top: calc(100px + 80px);
     width: 90vw;
+    right: -20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .jumping-boy-img {
+    right: -80px;
   }
 }
 @media screen and (max-width: 460px) {
@@ -242,20 +258,63 @@ button:hover {
   grid-template-rows: 0.5fr 0.5fr;
   height: 1000px;
 }
+@media screen and (max-width: 1220px) {
+  .captivating-moments-img-grid {
+    height: 850px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .captivating-moments-img-grid {
+    height: 700px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .captivating-moments-img-grid {
+    height: 650px;
+  }
+}
+@media screen and (max-width: 825px) {
+  .captivating-moments-img-grid {
+    height: 550px;
+  }
+}
 @media screen and (max-width: 720px) {
   .captivating-moments-img-grid {
-    height: 350px;
+    height: 1250px;
+    grid-template-columns: auto;
+    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr;
+  }
+}
+
+.empowering-wrapper {
+  grid-template-columns: auto;
+  grid-template-rows: 0.5fr 0.5fr;
+  height: 1150px;
+}
+@media screen and (max-width: 1220px) {
+  .empowering-wrapper {
+    height: 900px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .empowering-wrapper {
+    height: 700px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .empowering-wrapper {
+    height: 950px;
   }
 }
 
 .empowering {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
-  height: 650px;
 }
 @media screen and (max-width: 720px) {
   .empowering {
-    height: 150px;
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr 0.5fr;
   }
 }
 

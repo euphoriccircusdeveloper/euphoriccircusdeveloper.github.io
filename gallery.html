@@ -5,64 +5,64 @@
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
 		<script src="gallery.js"></script>
 		<link rel=stylesheet href="gallery.css">
-	<link rel=stylesheet href="global/reusables/top-bar/top-bar.css">
-<script src="global/reusables/top-bar/top-bar.js"></script>
-<link rel=stylesheet href="global/reusables/bottom-bar/bottom-bar.css">
-<script src="global/reusables/bottom-bar/bottom-bar.js"></script>
+	<link rel=stylesheet href="shared/reusables/top-bar/top-bar.css">
+<script src="shared/reusables/top-bar/top-bar.js"></script>
+<link rel=stylesheet href="shared/reusables/bottom-bar/bottom-bar.css">
+<script src="shared/reusables/bottom-bar/bottom-bar.js"></script>
 </head>
 	<body>
 		<div x-data="{ menuOpen: false }">
 	<div class="top-bar"> 
 		<div class="top-bar-contents"> 
-			<div class="align-middle-right"> <img class="euphoric-logo" src="global/images/logo.png" alt="Logo"> </div> 
+			<div class="align-middle-right"> <img class="euphoric-logo" src="shared/images/logo.png" alt="Logo"> </div> 
 			<div class="test-big">
 				<a  class="header-page-link-big" href="index.html"> Euphoric Circus!</a>
-				<img class="squiggle-test-big-link" x-show="onIndexPage" src="global/images/squiggle.svg" alt="current page underline">
+				<img class="squiggle-test-big-link" x-show="onIndexPage" src="shared/images/squiggle.svg" alt="current page underline">
 			</div>
 			<div class="test">
 				<a class="header-page-link" href="about-us.html"> About us </a> 
-				<img class="squiggle-test" x-show="onAboutUsPage" src="global/images/squiggle.svg" alt="current page underline">
+				<img class="squiggle-test" x-show="onAboutUsPage" src="shared/images/squiggle.svg" alt="current page underline">
 			</div>
 			<div class="test">
 				<a class="header-page-link" href="meet-the-team.html">  Meet the team </a> 
-				<img class="squiggle-test" x-show="onMeetTheTeamPage" src="global/images/squiggle.svg" alt="current page underline">
+				<img class="squiggle-test" x-show="onMeetTheTeamPage" src="shared/images/squiggle.svg" alt="current page underline">
 			</div>
 			<div class="test">
 				<a class="header-page-link" href="gallery.html">Gallery</a>
-				<img class="squiggle-test" x-show="onGalleryPage" src="global/images/squiggle.svg" alt="current page underline">
+				<img class="squiggle-test" x-show="onGalleryPage" src="shared/images/squiggle.svg" alt="current page underline">
 			</div>
 			<div class="test">
 				<a class="header-page-link" href="newsletters.html"> Newsletters </a> 
-				<img class="squiggle-test" x-show="onNewslettersPage" src="global/images/squiggle.svg" alt="current page underline">
+				<img class="squiggle-test" x-show="onNewslettersPage" src="shared/images/squiggle.svg" alt="current page underline">
 			</div>
 			<div class="test">
 				<a class="header-page-link" href="get-involved.html"> Get involved </a> 
-				<img class="squiggle-test" x-show="onGetInvolvedPage" src="global/images/squiggle.svg" alt="current page underline">
+				<img class="squiggle-test" x-show="onGetInvolvedPage" src="shared/images/squiggle.svg" alt="current page underline">
 			</div>
 			<div class="test">
 				<a class="header-page-link" href="contact.html"> Contact us </a>
-				<img class="squiggle-test" x-show="onContactPage" src="global/images/squiggle.svg" alt="current page underline">  
+				<img class="squiggle-test" x-show="onContactPage" src="shared/images/squiggle.svg" alt="current page underline">  
 			</div>
-			<div class="align-middle-right"  x-on:click="menuOpen = !menuOpen"> <img class="burger-menu" src="global/images/burgir-menu.svg" alt="pages menu"> </div> 
+			<div class="align-middle-right"  x-on:click="menuOpen = !menuOpen"> <img class="burger-menu" src="shared/images/burgir-menu.svg" alt="pages menu"> </div> 
 		</div>
 	</div>
 	<div :class="menuOpen ? 'side-bar-open' : 'side-bar'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-90"></div>
-	<div class="float-rounded-corner"> <img src="global/images/header-rounded-corner.svg" alt="header rounded corner"> </div> 
+	<div class="float-rounded-corner"> <img src="shared/images/header-rounded-corner.svg" alt="header rounded corner"> </div> 
 
 	<div class="mobile-menu-overlay"  x-show="menuOpen"></div>
-	<div class="mobile-menu-decor-left"  x-show="menuOpen"> <img src="global/images/Left-Decor.svg" alt="Decor"> </div> 
-	<div class="mobile-menu-decor-top"  x-show="menuOpen"> <img src="global/images/Top-Decor.svg" alt="Decor"> </div> 
-	<div class="mobile-menu-decor-right"  x-show="menuOpen"> <img src="global/images/Right-Decor.svg" alt="Decor"> </div> 
+	<div class="mobile-menu-decor-left"  x-show="menuOpen"> <img src="shared/images/Left-Decor.svg" alt="Decor"> </div> 
+	<div class="mobile-menu-decor-top"  x-show="menuOpen"> <img src="shared/images/Top-Decor.svg" alt="Decor"> </div> 
+	<div class="mobile-menu-decor-right"  x-show="menuOpen"> <img src="shared/images/Right-Decor.svg" alt="Decor"> </div> 
 
 	<div class="mob-drop-but-container">
-		<button class="mobile-dropdown-menu-button-1" x-show="menuOpen" onclick="window.location.href='index.html'">Home <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"> </button>
-		<button class="mobile-dropdown-menu-button-2" x-show="menuOpen" onclick="window.location.href='about-us.html'">About us <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-		<button class="mobile-dropdown-menu-button-3" x-show="menuOpen" onclick="window.location.href='meet-the-team.html'">Meet the team <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-		<button class="mobile-dropdown-menu-button-4" x-show="menuOpen" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-		<button class="mobile-dropdown-menu-button-5" x-show="menuOpen" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-		<button class="mobile-dropdown-menu-button-6" x-show="menuOpen" onclick="window.location.href='get-involved.html'">Get involved <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-		<button class="mobile-dropdown-menu-button-7" x-show="menuOpen" onclick="window.location.href='why-social-circus.html'">Why social circus? <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-		<button class="mobile-dropdown-menu-button-8" x-show="menuOpen" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-1" x-show="menuOpen" onclick="window.location.href='index.html'">Home <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"> </button>
+		<button class="mobile-dropdown-menu-button-2" x-show="menuOpen" onclick="window.location.href='about-us.html'">About us <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-3" x-show="menuOpen" onclick="window.location.href='meet-the-team.html'">Meet the team <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-4" x-show="menuOpen" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-5" x-show="menuOpen" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-6" x-show="menuOpen" onclick="window.location.href='get-involved.html'">Get involved <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-7" x-show="menuOpen" onclick="window.location.href='why-social-circus.html'">Why social circus? <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+		<button class="mobile-dropdown-menu-button-8" x-show="menuOpen" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
 	</div>
 	
 </div>
@@ -85,33 +85,33 @@
 			<div class="bottom-bar-main-content-top">
 				<div class="page-links-grid">
 					<div class="page-links-wrapper">
-						<button class="page-link" onclick="window.location.href='index.html'">Home <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"> </button>
-						<button class="page-link" onclick="window.location.href='about-us.html'">About us <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-						<button class="page-link" onclick="window.location.href='why-social-circus.html'">Why social circus? <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-						<button class="page-link hide-small" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-						<button class="page-link hide-big" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link" onclick="window.location.href='index.html'">Home <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"> </button>
+						<button class="page-link" onclick="window.location.href='about-us.html'">About us <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link" onclick="window.location.href='why-social-circus.html'">Why social circus? <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link hide-small" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link hide-big" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
 					</div>
 					<div class="page-links-wrapper">
-						<button class="page-link show-small" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-						<button class="page-link show-big" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-						<button class="page-link" onclick="window.location.href='get-involved.html'">Get involved <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
-						<button class="page-link hide-small" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link show-small" onclick="window.location.href='gallery.html'">Gallery <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link show-big" onclick="window.location.href='newsletters.html'">Newsletters <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link" onclick="window.location.href='get-involved.html'">Get involved <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link hide-small" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
 					</div>
 					<div class="page-links-wrapper show-small">
-						<button class="page-link show-small" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="global/images/page-link-arrow.svg" alt="arrow"></button>
+						<button class="page-link show-small" onclick="window.location.href='contact.html'">Contact us <img class="page-link-arrow" src="shared/images/page-link-arrow.svg" alt="arrow"></button>
 					</div>
 				</div>
 				<div class="partner-logos-wrapper">
-					<div class="partner-img-wrapper"> <img class="partner-img" src="global/images/founder_logos/westmAndFurnCouncil-logo.png" alt="West. <r-bottom-bar> furness coucil logo"> </div>
-					<div class="partner-img-wrapper"> <img class="partner-img" src="global/images/founder_logos/CumbriaCommunityFoundation-logo.jpeg" alt="Cumbria community found. logo"> </div>
+					<div class="partner-img-wrapper"> <img class="partner-img" src="shared/images/founder_logos/westmAndFurnCouncil-logo.png" alt="West. <r-bottom-bar> furness coucil logo"> </div>
+					<div class="partner-img-wrapper"> <img class="partner-img" src="shared/images/founder_logos/CumbriaCommunityFoundation-logo.jpeg" alt="Cumbria community found. logo"> </div>
 				</div> 
 			</div>
 			<div class="bottom-bar-bottom-wrapper ">
 				<div class="bottom-bar-main-content-bottom">
-					<div class="social-logo-wrapper"> <img class="social-logo" src="global/images/socials/mail-logo.png" alt="Mail logo"> </div>
-					<div class="social-logo-wrapper"> <img class="social-logo" src="global/images/socials/x-logo.png" alt="X logo"> </div>
-					<div class="social-logo-wrapper"> <img class="social-logo" src="global/images/socials/facebook-logo-minimal.webp" alt="Facebook logo"> </div>
-					<div class="social-logo-wrapper"> <img class="social-logo" src="global/images/socials/instagram-logo-minimal.webp" alt="Instagram logo"> </div>
+					<div class="social-logo-wrapper"> <img class="social-logo" src="shared/images/socials/mail-logo.png" alt="Mail logo"> </div>
+					<div class="social-logo-wrapper"> <img class="social-logo" src="shared/images/socials/x-logo.png" alt="X logo"> </div>
+					<div class="social-logo-wrapper"> <img class="social-logo" src="shared/images/socials/facebook-logo-minimal.webp" alt="Facebook logo"> </div>
+					<div class="social-logo-wrapper"> <img class="social-logo" src="shared/images/socials/instagram-logo-minimal.webp" alt="Instagram logo"> </div>
 					<div> </div>
 				</div>
 			</div>
