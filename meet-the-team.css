@@ -74,7 +74,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .ux-grid-specific {
+.ux-grid, .amazing-team-wrapper, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -92,18 +92,18 @@ button:hover {
   height: 100%;
 }
 
-.full-width-img {
+.full-width-img, .amazing-team-img-mobile, .amazing-team-img {
   border-radius: 30px;
   width: 100%;
   max-width: 800px;
 }
 @media screen and (max-width: 860px) {
-  .full-width-img {
+  .full-width-img, .amazing-team-img-mobile, .amazing-team-img {
     max-width: 500px;
   }
 }
 @media screen and (max-width: 720px) {
-  .full-width-img {
+  .full-width-img, .amazing-team-img-mobile, .amazing-team-img {
     max-width: 400px;
   }
 }
@@ -140,6 +140,15 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
+.centre-me-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .align-middle-right {
   display: flex;
   justify-content: flex-end; /* Align contents to the right */
@@ -163,7 +172,7 @@ button:hover {
   font-size: 1.5rem;
 }
 
-.page-intro {
+.page-intro, .intro-amazing-team-text {
   margin: 20px 0px 0px 0px;
 }
 
@@ -184,6 +193,12 @@ button:hover {
   width: 150px;
   height: 50px;
   margin: 20px 0px 0px 20px;
+}
+
+.full-width, .amazing-team-right, .amazing-team-left {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .D-team-members {
@@ -217,6 +232,79 @@ button:hover {
 @media screen and (max-width: 720px) {
   .team-member-img {
     max-width: 150px;
+  }
+}
+
+.amazing-team-arrow {
+  border-radius: 30px;
+  width: 100%;
+  max-width: 200px;
+  margin: 20px 0px 0px 20px; /* top right bottom left */
+}
+@media screen and (max-width: 720px) {
+  .amazing-team-arrow {
+    max-width: 20vw;
+  }
+}
+
+.amazing-team-wrapper {
+  grid-template-columns: 0.4fr 0.6fr;
+  height: 55vw;
+  min-height: 650px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 720px) {
+  .amazing-team-wrapper {
+    grid-template-columns: 0.3fr 0.7fr;
+    height: 65vw;
+    min-height: 0px;
+  }
+}
+
+.amazing-team-img {
+  object-fit: contain;
+}
+@media screen and (max-width: 720px) {
+  .amazing-team-img {
+    display: none;
+  }
+}
+
+.amazing-team-img-mobile {
+  object-fit: contain;
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .amazing-team-img-mobile {
+    display: block;
+  }
+}
+
+.amazing-team-text {
+  margin: 0px 15px 0px 0px;
+}
+@media screen and (max-width: 720px) {
+  .amazing-team-text {
+    display: none;
+  }
+}
+
+.intro-amazing-team-text {
+  margin: 0px 15px 0px 0px;
+}
+@media screen and (max-width: 720px) {
+  .intro-amazing-team-text {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .mobile-only {
+    display: block;
   }
 }
 

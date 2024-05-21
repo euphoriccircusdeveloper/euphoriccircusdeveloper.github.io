@@ -74,7 +74,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .ux-grid-specific {
+.ux-grid, .why-social-circus-wrapper, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -140,6 +140,15 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
+.centre-me-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .align-middle-right {
   display: flex;
   justify-content: flex-end; /* Align contents to the right */
@@ -184,6 +193,39 @@ button:hover {
   width: 150px;
   height: 50px;
   margin: 20px 0px 0px 20px;
+}
+
+.full-width {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.why-social-circus-wrapper {
+  grid-template-columns: 0.5fr 0.5fr;
+  height: 800px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 830px) {
+  .why-social-circus-wrapper {
+    height: 800px;
+  }
+}
+
+.why-social-circus-left {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.big-and-tall {
+  height: 100%;
+  border-radius: 30px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-radius: 30px;
+  margin: 20px 0px 0px 0px;
 }
 
 .about-us-intro-img {

@@ -140,6 +140,15 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
+.centre-me-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .align-middle-right {
   display: flex;
   justify-content: flex-end; /* Align contents to the right */
@@ -184,6 +193,12 @@ button:hover {
   width: 150px;
   height: 50px;
   margin: 20px 0px 0px 20px;
+}
+
+.full-width {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .bottom-bar {
