@@ -53,7 +53,7 @@ function renderPDF(){
 
 	loadingTask.promise.then(function(pdf) {
 		pdf.getPage(1).then(function(page) {
-			var scale = 1;
+			var scale = 0.9;
 			var viewport = page.getViewport({ scale: scale });
 
 			// Prepare canvas using PDF page dimensions
