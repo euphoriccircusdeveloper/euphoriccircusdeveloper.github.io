@@ -66,17 +66,9 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
-	console.log("! getting the gallery images !")
 	var gallery_images_dir_from_root="shared/images/page-images/gallery-images/"
 	var gallery_images_list=await get_gallery_images(gallery_images_dir_from_root)
-
-	console.log("	! got the images list: !")
-	console.log(gallery_images_list)
-
 	var constructed_html = await get_images_string(gallery_images_list)
-	console.log("	! got the constructed html: !")
-	console.log(constructed_html)
-
 	return constructed_html
 }
 
@@ -94,6 +86,30 @@ async function get_files_list_2(){
         }
         htmlString += '</ul>';
 		return htmlString;
+}
+
+
+async function get_files_list_2(){
+	// -- declare the static base --
+	let outputHtml = `
+		<ul>
+			<linksToFiles>
+		</ul>
+	`
+	// -- fetch the file list data --
+	const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/shared/images/page-images/gallery-images');
+	const data = await response.json();
+
+	// -- construct the dynamic part --
+	let linksToFilesString = '';
+	for (let file of data) {
+		linksToFilesString += `<li><a href="${file.path}">${file.name}</a></li>`;
+	}
+
+	// -- insert the dynamic part into the static base --
+	// TODO
+
+	return outputHtml;
 }
 
 
@@ -168,55 +184,6 @@ async function get_images_string(gallery_files_list){
 }
 
 /////////////////////////////////////
-
-
-/*
-async function contentGetter_gallery_images() {
-	var filename_placeholder="[[filename]]";
-	var gallery_images_dir="shared/images/page-images/gallery-images/"
-
-	//get the list of filenames (e.g. img1.jpeg)
-	var gallery_files_list = get_gallery_images()
-
-	//--construct the images html--
-	constructedHtml=""
-	for(int i = 0; i < len(gallery_files_list); i+=2){
-		//determine if there are 1 or 2 images on this row 
-		var numImages = 1
-		if file2index < len(gallery_files_list){
-			numImages = 2
-		}
-
-		//get the first image
-		var file1 = gallery_files_list[i]
-
-		if(numImages==1){
-			var base_string = `
-			<div class="grid-container">
-				<img class="full-width-img" src="shared/images/page-images/gallery-images/${file1}" alt="">
-			  </template>
-			</div>
-			`
-		}
-		else{
-			//2 images
-
-			var file2 = gallery_files_list[i+1]
-
-			var base_string = `
-			<div class="grid-container">
-				<img class="half-width-img" src="shared/images/page-images/gallery-images/${file1}" alt="">
-				<img class="half-width-img" src="shared/images/page-images/gallery-images/${file2}" alt="">
-			  </template>
-			</div>
-			`
-
-		}
-
-	return constructedString;
-}
-*/
-
 
 
 /**

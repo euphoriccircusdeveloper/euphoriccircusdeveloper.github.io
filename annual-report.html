@@ -69,7 +69,8 @@
 </div>
 
 
-			<div class="page-contents-wrapper">
+		<div class="page-contents-wrapper">
+			<div class="desktop-pdf">
 				<div class="pdf-side-hider-left"></div>
 				<div class="pdf-side-hider-right"></div>
 				<div class="pdf-side-hider-top "></div>
@@ -79,25 +80,14 @@
 					<!-- <iframe src="shared/images/reports/report.pdf" width="100%" height="100%" style="border: none;"></iframe> -->
 					<embed src="shared/images/reports/report.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="100%" style="border: none;" />
 				</div>
-
-
-				<h1> and.. the other pdf: </h1>
-				<div id="pdf-container" style="width: 100%; height: 100vh;"></div>
-
-				<h1> and... the google drive method </h1>
-
-				<iframe src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://l-holmes.github.io/shared/images/reports/report.pdf" width="100%" height="100%" style="border: none;"></iframe>
-
-				<h1> and... the third option </h1>
-				<div class="pdf-container">
-					<embed src="shared/images/reports/report.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="100%" onerror="this.style.display='none';document.getElementById('pdf-fallback').style.display='block';">
-					<div id="pdf-fallback" style="display:none;">
-						<p>It looks like your device does not support viewing PDFs. You can <a href="shared/images/reports/report.pdf" target="_blank">download the PDF</a> instead.</p>
-					</div>
-				</div>
-
-
 			</div>
+
+
+		</div>
+
+		<div id="john" class="mobile-pdf">
+			<div id="pdf-container" style="width: 100%; height: 100vh;"></div>
+		</div>
 
 
 		

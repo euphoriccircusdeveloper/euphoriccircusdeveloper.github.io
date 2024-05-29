@@ -201,6 +201,23 @@ button:hover {
   overflow-y: hidden;
 }
 
+@media screen and (max-width: 720px) {
+  .desktop-pdf {
+    display: none;
+  }
+}
+
+.mobile-pdf {
+  display: none;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 720px) {
+  .mobile-pdf {
+    display: block;
+  }
+}
+
 .pdf-container {
   width: 83vw;
   height: 600px; /* Adjust height as needed */
