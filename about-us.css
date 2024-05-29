@@ -179,6 +179,11 @@ button:hover {
 .page-intro {
   margin: 20px 0px 0px 0px;
 }
+@media screen and (max-width: 720px) {
+  .page-intro {
+    margin-right: 30px; /*stop the text from overlapping with the side bar on mobile */
+  }
+}
 
 .section-intro {
   margin: 20px 0px 0px 0px;
@@ -216,6 +221,11 @@ button:hover {
     height: 800px;
   }
 }
+@media screen and (max-width: 720px) {
+  .why-social-circus-wrapper {
+    grid-template-columns: 0.65fr 0.35fr;
+  }
+}
 
 .why-social-circus-left {
   width: 100%;
@@ -223,13 +233,40 @@ button:hover {
   overflow-y: hidden;
 }
 
-.big-and-tall {
+.big-and-tall, .big-and-tall-mobile, .big-and-tall-desktop {
   height: 100%;
   border-radius: 30px;
   overflow-x: hidden;
   overflow-y: hidden;
   border-radius: 30px;
   margin: 20px 0px 0px 0px;
+  max-width: 100%;
+}
+
+.big-and-tall-desktop {
+  display: block;
+}
+@media screen and (max-width: 1160px) {
+  .big-and-tall-desktop {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 720px) {
+  .big-and-tall-desktop {
+    display: none;
+  }
+}
+
+.big-and-tall-mobile {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .big-and-tall-mobile {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
 }
 
 .about-us-intro-img {

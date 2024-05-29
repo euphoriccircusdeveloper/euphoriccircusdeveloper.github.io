@@ -179,6 +179,11 @@ button:hover {
 .page-intro {
   margin: 20px 0px 0px 0px;
 }
+@media screen and (max-width: 720px) {
+  .page-intro {
+    margin-right: 30px; /*stop the text from overlapping with the side bar on mobile */
+  }
+}
 
 .section-intro {
   margin: 20px 0px 0px 0px;
@@ -217,6 +222,11 @@ button:hover {
 
 .newsletter-img {
   height: 100%;
+}
+@media screen and (max-width: 830px) {
+  .newsletter-img {
+    height: 200px;
+  }
 }
 
 /*# sourceMappingURL=newsletters.css.map */

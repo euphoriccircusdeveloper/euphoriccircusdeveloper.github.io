@@ -179,6 +179,11 @@ button:hover {
 .page-intro, .intro-amazing-team-text {
   margin: 20px 0px 0px 0px;
 }
+@media screen and (max-width: 720px) {
+  .page-intro, .intro-amazing-team-text {
+    margin-right: 30px; /*stop the text from overlapping with the side bar on mobile */
+  }
+}
 
 .section-intro {
   margin: 20px 0px 0px 0px;
