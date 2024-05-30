@@ -149,10 +149,11 @@ button:hover {
   overflow-y: hidden;
 }
 
-.align-middle-right {
+.align-middle-right, .align-middle-right-logo {
   display: flex;
   justify-content: flex-end; /* Align contents to the right */
   align-items: center; /* Vertical center */
+  width: 100%;
 }
 
 .page-contents-wrapper {
@@ -234,6 +235,22 @@ button:hover {
     grid-template-columns: 0.25fr 0.25fr 0.5fr;
   }
 }
+@media screen and (max-width: 500px) {
+  .top-bar-contents {
+    grid-template-columns: 0.25fr 0.25fr 1fr;
+  }
+}
+@media screen and (max-width: 300px) {
+  .top-bar-contents {
+    grid-template-columns: 0.5fr 0.25fr 0.6fr;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .align-middle-right-logo {
+    justify-content: flex-start;
+  }
+}
 
 .ux-page-contents {
   margin: 30px;
@@ -265,6 +282,11 @@ button:hover {
     padding: 0px 30px 0px 0px;
   }
 }
+@media screen and (max-width: 420px) {
+  .burger-menu {
+    padding: 0px;
+  }
+}
 
 .header-page-link, .test {
   font-size: 1.25rem;
@@ -289,13 +311,13 @@ button:hover {
 
 .header-page-link-big, .test-big {
   font-size: 1.5rem;
+  /* Cheating a bit to be honest */
 }
 @media screen and (max-width: 860px) {
   .header-page-link-big, .test-big {
     font-size: 1.25rem;
   }
 }
-
 .vertical_transition, .mobile-dropdown-menu-button, .mobile-dropdown-menu-button-8, .mobile-dropdown-menu-button-7, .mobile-dropdown-menu-button-6, .mobile-dropdown-menu-button-5, .mobile-dropdown-menu-button-4, .mobile-dropdown-menu-button-3, .mobile-dropdown-menu-button-2, .mobile-dropdown-menu-button-1, .mobile-menu-decor-right, .mobile-menu-decor-top, .mobile-menu-decor-left, .mobile-menu-overlay, .side-bar-open {
   transition: height 0.6s ease;
 }
@@ -381,7 +403,6 @@ button:hover {
     left: 30%;
     top: 100px;
     height: auto;
-    width: 100%;
     z-index: 2;
   }
 }

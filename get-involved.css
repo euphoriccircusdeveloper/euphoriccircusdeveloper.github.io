@@ -153,6 +153,7 @@ button:hover {
   display: flex;
   justify-content: flex-end; /* Align contents to the right */
   align-items: center; /* Vertical center */
+  width: 100%;
 }
 
 .page-contents-wrapper {
