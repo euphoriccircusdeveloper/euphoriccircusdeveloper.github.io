@@ -11,7 +11,16 @@
 <script src="shared/reusables/bottom-bar/bottom-bar.js"></script>
 </head>
 	<body>
-		<div x-data="{ menuOpen: false }">
+		<div x-data="{ menuOpen: false }" x-init="() => {
+        window.addEventListener('scroll', () => {
+            if (menuOpen ) {
+				if (window.scrollY > 200){
+					window.scrollTo(0, 200);
+				}
+            }
+        });
+    }">
+
 	<div class="top-bar"> 
 		<div class="top-bar-contents"> 
 			<div class="align-middle-right-logo"> <img class="euphoric-logo" src="shared/images/logo.png" alt="Logo"> </div> 
