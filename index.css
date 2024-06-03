@@ -317,7 +317,7 @@ button:hover {
 .empowering-wrapper {
   grid-template-columns: auto;
   grid-template-rows: 0.5fr 0.5fr;
-  height: 1150px;
+  height: 1250px;
 }
 @media screen and (max-width: 1220px) {
   .empowering-wrapper {
@@ -326,12 +326,12 @@ button:hover {
 }
 @media screen and (max-width: 830px) {
   .empowering-wrapper {
-    height: 700px;
+    height: 950px;
   }
 }
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 720px) {
   .empowering-wrapper {
-    height: 950px;
+    height: 1200px;
   }
 }
 
