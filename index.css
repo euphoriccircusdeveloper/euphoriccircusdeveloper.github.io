@@ -140,11 +140,14 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
-.centre-me-wrapper {
+.centre-me-wrapper-no-overflow-block, .centre-me-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.centre-me-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -289,26 +292,30 @@ button:hover {
 .captivating-moments-img-grid {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: 0.5fr 0.5fr;
-  height: 1000px;
+  height: auto;
 }
 @media screen and (max-width: 1220px) {
   .captivating-moments-img-grid {
     height: 850px;
+    height: auto;
   }
 }
 @media screen and (max-width: 1050px) {
   .captivating-moments-img-grid {
     height: 700px;
+    height: auto;
   }
 }
 @media screen and (max-width: 825px) {
   .captivating-moments-img-grid {
     height: 550px;
+    height: auto;
   }
 }
 @media screen and (max-width: 720px) {
   .captivating-moments-img-grid {
     height: 1250px;
+    height: auto;
     grid-template-columns: auto;
     grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr;
   }
@@ -317,22 +324,7 @@ button:hover {
 .empowering-wrapper {
   grid-template-columns: auto;
   grid-template-rows: 0.5fr 0.5fr;
-  height: 1250px;
-}
-@media screen and (max-width: 1220px) {
-  .empowering-wrapper {
-    height: 900px;
-  }
-}
-@media screen and (max-width: 830px) {
-  .empowering-wrapper {
-    height: 950px;
-  }
-}
-@media screen and (max-width: 720px) {
-  .empowering-wrapper {
-    height: 1200px;
-  }
+  height: auto;
 }
 
 .empowering {

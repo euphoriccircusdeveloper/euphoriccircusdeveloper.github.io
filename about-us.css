@@ -140,11 +140,14 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
-.centre-me-wrapper {
+.centre-me-wrapper-no-overflow-block, .centre-me-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.centre-me-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -213,14 +216,7 @@ button:hover {
 
 .why-social-circus-wrapper {
   grid-template-columns: 0.5fr 0.5fr;
-  height: 800px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-@media screen and (max-width: 830px) {
-  .why-social-circus-wrapper {
-    height: 800px;
-  }
+  height: auto;
 }
 @media screen and (max-width: 720px) {
   .why-social-circus-wrapper {

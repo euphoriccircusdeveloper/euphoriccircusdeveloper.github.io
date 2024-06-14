@@ -140,11 +140,14 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
-.centre-me-wrapper {
+.centre-me-wrapper-no-overflow-block, .centre-me-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.centre-me-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
 }

@@ -140,11 +140,14 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
-.centre-me-wrapper {
+.centre-me-wrapper-no-overflow-block, .centre-me-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.centre-me-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -215,8 +218,9 @@ button:hover {
   width: 100%;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
-  height: 1700px;
+  height: auto;
 }
+
 .roles-wrapper-right-offset {
   padding: 50px;
 }
