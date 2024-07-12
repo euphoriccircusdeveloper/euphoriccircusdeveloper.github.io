@@ -74,7 +74,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .empowering, .empowering-wrapper, .captivating-moments-img-grid, .index-intro-grid, .ux-grid-specific {
+.ux-grid, .empowering, .empowering-wrapper, .captivating-moments-img-grid, .index-intro-mobile, .index-intro-grid, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -198,7 +198,7 @@ button:hover {
   padding: 20px 0px 20px 0px;
 }
 
-.standard-button {
+.standard-button, .button-no-margin {
   background-color: #FFDD56;
   border: 1px solid black;
   border-radius: 13px;
@@ -208,16 +208,50 @@ button:hover {
   margin: 20px 0px 0px 20px;
 }
 
+.button-no-margin {
+  padding: 0px;
+  margin: 20px 0px 0px 0px;
+}
+
 .full-width {
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
+.intro-para-mobile {
+  margin-top: 20px;
+  margin-right: 40vw;
+}
+
 .index-intro-grid {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
-  height: 100vh;
+  height: auto;
+  margin: 0px 0px 20px 0px;
+}
+@media screen and (max-width: 720px) {
+  .index-intro-grid {
+    grid-template-columns: 0.7fr 0.3fr;
+  }
+}
+@media screen and (max-width: 441px) {
+  .index-intro-grid {
+    display: none;
+  }
+}
+
+.index-intro-mobile {
+  grid-template-columns: 0.9fr 0.1fr;
+  grid-template-rows: auto;
+  height: auto;
+  margin: 0px 0px 20px 0px;
+  display: none;
+}
+@media screen and (max-width: 440px) {
+  .index-intro-mobile {
+    display: block;
+  }
 }
 
 .index-page-intro {
@@ -264,10 +298,24 @@ button:hover {
     width: 70vw;
   }
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 601px) {
   .jumping-boy-img-mobile {
+    display: none;
+  }
+}
+
+.jumping-boy-img-mobile-small {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .jumping-boy-img-mobile-small {
+    display: block;
+    position: absolute;
+    right: 0px;
+    height: auto;
+    z-index: -1;
     top: calc(100px + 80px + 100px);
-    width: 80vw;
+    width: 55vw;
   }
 }
 

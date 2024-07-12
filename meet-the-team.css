@@ -198,7 +198,7 @@ button:hover {
   padding: 20px 0px 20px 0px;
 }
 
-.standard-button {
+.standard-button, .button-no-margin {
   background-color: #FFDD56;
   border: 1px solid black;
   border-radius: 13px;
@@ -206,6 +206,11 @@ button:hover {
   width: 150px;
   height: 50px;
   margin: 20px 0px 0px 20px;
+}
+
+.button-no-margin {
+  padding: 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 .full-width, .amazing-team-right, .amazing-team-left {
