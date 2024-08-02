@@ -326,4 +326,22 @@ button:hover {
   }
 }
 
+.supporter-img-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack the image above the text */
+  align-items: center; /* Center align the content */
+  margin: 20px 0; /* Add vertical spacing between entries */
+}
+
+.supporter-img {
+  width: 20vw; /* Set width to 20% of the viewport width */
+  max-width: 200px; /* Set a maximum width */
+  min-width: 50px; /* Set a minimum width */
+}
+
+.supporter-img-wrapper div {
+  text-align: center; /* Center the text */
+  margin-top: 10px; /* Space between the image and the text */
+}
+
 /*# sourceMappingURL=meet-the-team.css.map */
