@@ -1,4 +1,4 @@
-
+var url = 'https://l-holmes.github.io/shared/images/reports/report.pdf';
 
 // Function to set the left position based on the container's width
 function updateSideHiderPosition(width) {
@@ -19,40 +19,12 @@ const resizeObserver = new ResizeObserver(entries => {
 
 
 //////////////////////
-var url = 'https://l-holmes.github.io/shared/images/reports/report.pdf';
 var loadingTask = pdfjsLib.getDocument(url);
 
-function renderPDF(){
-
-	/*
-	// Load PDF
-	loadingTask.promise.then(function(pdf) {
-		// Fetch the first page
-		pdf.getPage(1).then(function(page) {
-			var scale = 1;
-			var viewport = page.getViewport({ scale: scale });
-
-			// Prepare canvas using PDF page dimensions
-			var canvas = document.createElement('canvas');
-			var context = canvas.getContext('2d');
-			canvas.height = viewport.height;
-			canvas.width = viewport.width;
-			document.getElementById('pdf-container').appendChild(canvas);
-
-			// Render PDF page into canvas context
-			var renderContext = {
-				canvasContext: context,
-				viewport: viewport
-			};
-			page.render(renderContext);
-		});
-	}, function (reason) {
-		console.error(reason);
-	});
-	*/
-
+function renderPDFOld(){
 	loadingTask.promise.then(function(pdf) {
 		pdf.getPage(1).then(function(page) {
+			console.log("rendering first page...............")
 			var scale = 0.9;
 			var viewport = page.getViewport({ scale: scale });
 
@@ -78,8 +50,49 @@ function renderPDF(){
 	}).catch(function(reason) {
 		console.error(reason);
 	});
+}
 
+function renderPDF() {
+    loadingTask.promise.then(function(pdf) {
+		console.log("aahhhhhhhhhhhhhhhhhhh")
+        const pdfContainer = document.getElementById('pdf-container');
+        pdfContainer.innerHTML = ''; // Clear any previous content
 
+        function renderPage(pageNum) {
+			console.log("ahhhhhhh2")
+            pdf.getPage(pageNum).then(function(page) {
+                var scale = 0.9;
+                var viewport = page.getViewport({ scale: scale });
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                pdfContainer.appendChild(canvas);
+
+                var renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                page.render(renderContext).promise.then(() => {
+					console.log("rendering with page num: ", pageNum)
+                    if (pageNum < pdf.numPages) {
+                        // If there are more pages, render the next one
+                        renderPage(pageNum + 1);
+                    } else {
+                        // All pages rendered, now center the PDF
+                        centerPDF();
+                    }
+                });
+            });
+        }
+
+        // Start rendering from the first page
+        renderPage(1);
+    }).catch(function(reason) {
+        console.error(reason);
+    });
 }
 
 function centerPDF() {

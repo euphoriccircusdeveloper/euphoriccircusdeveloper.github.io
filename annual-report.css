@@ -236,7 +236,7 @@ button:hover {
   }
 }
 
-.pdf-container {
+.desktop-pdf-container {
   width: 83vw;
   height: 600px; /* Adjust height as needed */
   overflow: auto; /* Enable scrolling */
