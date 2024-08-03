@@ -66,7 +66,7 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
-	var gallery_images_dir_from_root="shared/images/page-images/gallery-images/"
+	var gallery_images_dir_from_root="CLICK-HERE/gallery-images/"
 	var gallery_images_list=await get_gallery_images(gallery_images_dir_from_root)
 	var constructed_html = await get_images_string(gallery_images_list)
 	return constructed_html
@@ -76,7 +76,7 @@ async function contentGetter_gallery_images() {
 
 async function get_files_list_2(){
 		console.log("getting the images list")
-		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/shared/images/page-images/gallery-images');
+		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/gallery-images');
         const data = await response.json();
 		console.log("got the data")
 		console.log(data)
@@ -97,7 +97,7 @@ async function get_files_list_2(){
 		</ul>
 	`
 	// -- fetch the file list data --
-	const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/shared/images/page-images/gallery-images');
+	const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/gallery-images');
 	const data = await response.json();
 
 	// -- construct the dynamic part --

@@ -71,7 +71,7 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_team_members() {
-	var gallery_images_dir_from_root="shared/images/page-images/team/"
+	var gallery_images_dir_from_root="CLICK-HERE/team-members/"
 	var gallery_images_list=await get_gallery_images(gallery_images_dir_from_root)
 
 	console.log("	! got the images list: !")

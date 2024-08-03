@@ -1,4 +1,4 @@
-var url = 'https://l-holmes.github.io/shared/images/reports/weekly-report.pdf';
+var url = 'https://l-holmes.github.io/reports/weekly-report.pdf';
 
 // Function to set the left position based on the container's width
 function updateSideHiderPosition(width) {
