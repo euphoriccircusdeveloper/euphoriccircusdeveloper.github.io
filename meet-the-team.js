@@ -97,7 +97,7 @@ async function get_gallery_images(directory) {
 
 		const response = await fetch(github_images_repo);
         if (!response.ok) {
-            throw new Error('Failed to fetch images: ' + response.statusText + ' :o (does the image folder that you are looking for exist on github?) ' + response);
+            throw new Error('Failed to fetch images from the url:'+github_images_repo+' .. Here is the response status text: ' + response.statusText + ' :o (does the image folder that you are looking for exist on github?) .. here is the response: ' + response);
         }
 		//can use file.path to get the path and file.name to get the name
         const data = await response.json();

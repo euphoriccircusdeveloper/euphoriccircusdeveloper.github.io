@@ -76,7 +76,7 @@ async function contentGetter_gallery_images() {
 
 async function get_files_list_2(){
 		console.log("getting the images list")
-		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/gallery-images');
+		const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/CLICK-HERE/gallery-images');
         const data = await response.json();
 		console.log("got the data")
 		console.log(data)
@@ -97,7 +97,7 @@ async function get_files_list_2(){
 		</ul>
 	`
 	// -- fetch the file list data --
-	const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/gallery-images');
+	const response = await fetch('https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/CLICK-HERE/gallery-images');
 	const data = await response.json();
 
 	// -- construct the dynamic part --
@@ -122,7 +122,7 @@ async function get_gallery_images(directory) {
 
 		const response = await fetch(github_images_repo);
         if (!response.ok) {
-            throw new Error('Failed to fetch images: ' + response.statusText);
+            throw new Error('Failed to fetch images from the repo: '+github_images_repo+' ... here is the response status text: '+ response.statusText);
         }
 		//can use file.path to get the path and file.name to get the name
         const data = await response.json();
