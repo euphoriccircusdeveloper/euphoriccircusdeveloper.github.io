@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", setDynamicElementsContent);
-
-
 async function setDynamicElementsContent(){
 	var prefix = "D-"
 	var corrContentFuncNameStart = "contentGetter_"
