@@ -1,0 +1,12 @@
+# OS generated files #
+.DS_Store
+
+# Temporary files #
+*.swp
+*~
+*.log
+
+# Node.js / npm #
+node_modules/
+npm-debug.log
+

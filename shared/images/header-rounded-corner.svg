@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="100" height="100">
+  <!-- Clipping path for the circle -->
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="0" cy="50" r="50"/>
+    </clipPath>
+  </defs>
+  <!-- Mask for the square -->
+  <defs>
+    <mask id="squareMask">
+      <rect x="0" y="0" width="50" height="50" fill="white"/>
+      <circle cx="0" cy="50" r="50" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Square -->
+  <rect x="0" y="0" width="50" height="50" fill="#493DAF" mask="url(#squareMask)"/>
+  <!-- Circle with clipping -->
+  <circle cx="0" cy="50" r="50" fill="transparent" clip-path="url(#circleClip)"/>
+</svg>
