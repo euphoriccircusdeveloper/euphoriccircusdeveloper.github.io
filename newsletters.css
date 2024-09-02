@@ -61,6 +61,12 @@ h1 {
   font-family: "Suwannaphum-Bold", sans-serif;
 }
 
+h2 {
+  color: #493DAF;
+  margin: 0px;
+  font-family: "Suwannaphum-Bold", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;

@@ -61,6 +61,12 @@ h1 {
   font-family: "Suwannaphum-Bold", sans-serif;
 }
 
+h2 {
+  color: #493DAF;
+  margin: 0px;
+  font-family: "Suwannaphum-Bold", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -74,7 +80,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .amazing-team-wrapper, .ux-grid-specific {
+.ux-grid, .our-logos-wrapper, .amazing-team-wrapper, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -333,6 +339,12 @@ button:hover {
   margin: 20px 0; /* Add vertical spacing between entries */
 }
 
+.our-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .supporter-img {
   width: 20vw; /* Set width to 20% of the viewport width */
   max-width: 200px; /* Set a maximum width */
@@ -342,6 +354,11 @@ button:hover {
 .supporter-img-wrapper div {
   text-align: center; /* Center the text */
   margin-top: 10px; /* Space between the image and the text */
+}
+
+.our-logos-wrapper {
+  grid-template-columns: 0.5fr 0.5fr;
+  height: auto;
 }
 
 /*# sourceMappingURL=meet-the-team.css.map */
