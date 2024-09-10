@@ -80,7 +80,7 @@ button:hover {
   background-color: transparent;
 }
 
-.ux-grid, .our-logos-wrapper, .amazing-team-wrapper, .ux-grid-specific {
+.ux-grid, .our-logos-wrapper, .double-supporter, .amazing-team-wrapper, .ux-grid-specific {
   display: grid;
   height: 100%;
 }
@@ -143,6 +143,11 @@ button:hover {
 .align-centre {
   display: flex;
   justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+}
+
+.vertically-centre {
+  display: flex;
   align-items: center; /* Vertical center */
 }
 
@@ -354,6 +359,12 @@ button:hover {
 .supporter-img-wrapper div {
   text-align: center; /* Center the text */
   margin-top: 10px; /* Space between the image and the text */
+}
+
+.double-supporter {
+  grid-template-columns: 0.5fr 0.5fr;
+  height: auto;
+  width: auto;
 }
 
 .our-logos-wrapper {

@@ -146,6 +146,11 @@ button:hover {
   align-items: center; /* Vertical center */
 }
 
+.vertically-centre {
+  display: flex;
+  align-items: center; /* Vertical center */
+}
+
 .centre-me-wrapper-no-overflow-block, .centre-me-wrapper {
   display: flex;
   flex-direction: column;
