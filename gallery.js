@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", setDynamicElementsContent);
 async function setDynamicElementsContent(){
 	var prefix = "D-"
 	var corrContentFuncNameStart = "contentGetter_"
+	var DEFAULT_GALLERY_COUNT = 12
 
 	console.log("Loading the dynamic elements...")
 
@@ -57,6 +58,19 @@ async function setDynamicElementsContent(){
 		//--SET THE ELEMENTS NEW CONTENT--
 		element.innerHTML = elementContent;
 	}
+
+	var btn = document.getElementById('show-all-btn');
+	if (btn) {
+		btn.addEventListener('click', async function() {
+			var container = document.getElementById('D-gallery-images');
+			if (!container) return;
+			var oldList = await get_old_gallery_images('CLICK-HERE/gallery-images/');
+			var html = await get_images_string(oldList);
+			container.insertAdjacentHTML('beforeend', html);
+			btn.disabled = true;
+			btn.textContent = 'All photos shown';
+		});
+	}
 }
 
 
@@ -64,8 +78,9 @@ async function setDynamicElementsContent(){
 
 //tier 1
 async function contentGetter_gallery_images() {
-	var gallery_images_dir_from_root="CLICK-HERE/gallery-images/"
+	var gallery_images_dir_from_root="shared/images/new/"
 	var gallery_images_list=await get_gallery_images(gallery_images_dir_from_root)
+	window.__NEW_GALLERY__ = gallery_images_list
 	var constructed_html = await get_images_string(gallery_images_list)
 	return constructed_html
 }
@@ -115,23 +130,68 @@ async function get_files_list_2(){
  * @return: essentially; {{filname:'name', filepath:'path'},{...},{...},..., {...}}
 **/
 async function get_gallery_images(directory) {
-	github_images_repo=`https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/${directory}`
-    try {
-
-		const response = await fetch(github_images_repo);
-        if (!response.ok) {
-            throw new Error('Failed to fetch images from the repo: '+github_images_repo+' ... here is the response status text: '+ response.statusText);
-        }
-		//can use file.path to get the path and file.name to get the name
-        const data = await response.json();
-
-        return data;
-    } catch (error) {
-        console.error(error);
-        return [];
-    }
+	// Use local static list to avoid relying on GitHub API
+	const files = [
+		"1000002890.jpg",
+		"1000003176.jpg",
+		"1000003186.jpg",
+		"1000003326.jpg",
+		"1000003499.jpg",
+		"1000003542.jpg",
+		"1000004249.jpg",
+		"1000004310.jpg",
+		"1000004639.jpg",
+		"1000005446.jpg",
+		"1000005449.jpg",
+		"1000005479.png",
+		"1000005483.jpg",
+		"1000005484.jpg",
+		"1000005559.png",
+		"1000005561.png",
+		"1000006108.jpg",
+		"1000006122.jpg",
+		"1000007462.jpg",
+		"1000007678.jpg",
+		"1000007680.jpg",
+		"1000007681.jpg",
+		"1000007987.jpg",
+		"1000008046.jpg",
+		"1000008364.jpg",
+		"1000009625.jpg",
+		"1000009637.jpg",
+		"1000009643.jpg",
+		"1000009673.jpg",
+		"1000009809.png",
+		"1000010726.jpg"
+	];
+	return files.map(name => ({ name, path: `${directory}${name}` }));
 }
 
+async function get_old_gallery_images(directory) {
+	const files = [
+		"balancing.jpeg",
+		"blind-hoola.png",
+		"bonfire.jpeg",
+		"cartwheels.jpeg",
+		"fire-blow.jpeg",
+		"food.png",
+		"group-stretch.png",
+		"hoola-hoop.jpeg",
+		"hoop-tutorial.png",
+		"mat-jump.jpg",
+		"parkour-1.jpeg",
+		"side-stretch.jpg",
+		"spooky-3.jpeg",
+		"streeetttcchhhh.jpeg",
+		"stretch-teach.jpg",
+		"tight-rope.jpg",
+		"trampoline.jpeg",
+		"trapeze.jpeg",
+		"treble-balance.JPG",
+		"young-crafts.jpg"
+	];
+	return files.map(name => ({ name, path: `${directory}${name}` }));
+}
 async function get_images_string(gallery_files_list){
 	// Assuming gallery_files_list is an array containing the filenames
 	// Construct the base URL for the images

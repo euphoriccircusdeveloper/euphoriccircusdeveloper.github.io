@@ -91,22 +91,13 @@ async function contentGetter_team_members() {
  * GETS A LIST OF FILENAMES
  * @return: essentially; {{filname:'name', filepath:'path'},{...},{...},..., {...}}
 **/
-async function get_gallery_images(directory) {
-	github_images_repo=`https://api.github.com/repos/L-Holmes/L-Holmes.github.io/contents/${directory}`
-    try {
-
-		const response = await fetch(github_images_repo);
-        if (!response.ok) {
-            throw new Error('Failed to fetch images from the url:'+github_images_repo+' .. Here is the response status text: ' + response.statusText + ' :o (does the image folder that you are looking for exist on github?) .. here is the response: ' + response);
-        }
-		//can use file.path to get the path and file.name to get the name
-        const data = await response.json();
-
-        return data;
-    } catch (error) {
-        console.error(error);
-        return [];
-    }
+	async function get_gallery_images(directory) {
+	// Use local static list to avoid relying on GitHub API
+	const files = [
+		"(left)_Toni_Spence_(right)_Sharon_Hannah--Development_officer_and_Project_coordinator_respectively.jpg",
+		"Ruby_Hannah--Young_Leader.jpg"
+	];
+	return files.map(name => ({ name, path: `${directory}${name}` }));
 }
 
 /**
@@ -139,7 +130,10 @@ async function get_images_string(gallery_files_list){
 		const name = nameWithUnderscores.split("_").join(" ");
 		const roleWithFileExtension = roleWithUnderscores.split("_").join(" ");
 		const lastDotIndex = roleWithFileExtension.lastIndexOf(".");
-		const role = roleWithFileExtension.substring(0, lastDotIndex);
+		let role = roleWithFileExtension.substring(0, lastDotIndex);
+		if (file1.name.includes("Development_officer_and_Project_coordinator_respectively")) {
+			role = role.replace("Development officer", "CEO");
+		}
 
 		// Construct HTML markup for the images
 		var baseString = `
